@@ -111,17 +111,6 @@ angular.module('iconicApp')
         bg: "black",
       },
     ];
-    return {
-      icons: icons,
-      attributedKinds: attributedKinds,
-      schemes: colorSchemes,
-    }
-  })
-  .controller('IconsCtrl', function ($scope, sIconData) {
-    var icons = sIconData.icons;
-    var colorSchemes = sIconData.schemes;
-    var attributedKinds = sIconData.attributedKinds;
-
     function findSchemeIndex(name) {
       // Helper to get index from name
       var found = 0
@@ -132,6 +121,18 @@ angular.module('iconicApp')
       });
       return found;
     }
+    return {
+      icons: icons,
+      attributedKinds: attributedKinds,
+      schemes: colorSchemes,
+      findSchemeIndex: findSchemeIndex,
+    }
+  })
+  .controller('IconsCtrl', function ($scope, sIconData) {
+    var icons = sIconData.icons;
+    var colorSchemes = sIconData.schemes;
+    var attributedKinds = sIconData.attributedKinds;
+
     //$scope.scheme = colorSchemes[1];
     //$scope.icons = icons; //[icons[0], icons[1]];
     $scope.schemes = colorSchemes;
@@ -142,7 +143,7 @@ angular.module('iconicApp')
     
     icons.forEach(function(icon, i) {
       //console.debug([icon, i]);
-      var schemeIndex = findSchemeIndex(attributedKinds[icon]);
+      var schemeIndex = sIconData.findSchemeIndex(attributedKinds[icon]);
       var coat = {
         "icon": icon,
         "schemeIndex": schemeIndex,
