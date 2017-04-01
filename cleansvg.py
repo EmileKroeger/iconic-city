@@ -21,7 +21,7 @@ def fix(filepath):
     found = False
     for child in root.getchildren():
         if "path" in child.tag:
-            if child.attrib["fill"] == '#000':
+            if child.attrib.get("fill", None) == '#000':
                 print " found black path."
                 children.remove(child)
                 found = True
@@ -36,10 +36,11 @@ def fix(filepath):
         print "no fix needed"
 
 def run():
-    for filename in os.listdir(ROOT)[1:]:
-        print
-        print filename
-        fix(os.path.join(ROOT, filename))
+    for filename in os.listdir(ROOT):
+        if "svg" in filename:
+            print
+            print filename
+            fix(os.path.join(ROOT, filename))
         
                     
         #print els
@@ -49,4 +50,14 @@ def run():
         #    print len(svgdata)
         #break
 
-run()
+def listicons():
+    names = []
+    for filename in os.listdir(ROOT):
+        if ".svg" in filename:
+            names.append(filename[:-4])
+            if "(1)" in filename:
+                print filename
+    print repr(names)
+
+#run()
+listicons()
