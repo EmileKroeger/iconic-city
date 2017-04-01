@@ -16,7 +16,7 @@ g_et = None
 def fix(filepath):
     et = xml.etree.ElementTree.parse(filepath)
     root = et.getroot()
-    print help(root.getchildren)
+    #print help(root.getchildren)
     children = root.getchildren()
     found = False
     for child in root.getchildren():
@@ -47,6 +47,6 @@ def run():
         #with open(filepath) as svgfile:
         #    svgdata = svgfile.read()
         #    print len(svgdata)
-        break
+        #break
 
 run()
