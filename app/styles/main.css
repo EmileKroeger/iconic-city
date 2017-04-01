@@ -77,3 +77,31 @@ body {
     border-bottom: 0;
   }
 }
+
+
+/* Icon stuff */
+
+.shield {
+  display: inline-block;
+  color: yellow;
+  background-color: red;
+  width: 80px;
+  height: 120px;
+  padding: 5px;
+  margin: 5px;
+  position: relative;
+  /*
+  mask-image: url(../images/icons/ammonite.svg),
+                       linear-gradient(-45deg,
+                      rgba(0,0,0,1) 20%, rgba(0,0,0,0) 50%);
+  -webkit-mask-image: url(../images/icons/ammonite.svg),
+  linear-gradient(-45deg,
+ rgba(0,0,0,1) 20%, rgba(0,0,0,0) 50%);
+ -webkit-mask-box-image: url(http://www.clker.com/cliparts/F/5/I/M/f/U/running-icon-white-on-transparent-background-md.png);
+  */
+
+ -webkit-mask-box-image: url(../images/icons/ammonite.svg)  100 100 0 0 round round;
+ 
+  
+
+}
