@@ -80,23 +80,33 @@ body {
 
 
 /* Icon stuff */
-
-.shield {
-  display: inline-block;
-  color: darkred;
-  background-color: red;
-  width: 80px;
-  height: 120px;
-  padding: 5px;
-  margin: 5px;
+.heraldrybox {
   position: relative;
+  display: inline-block;
   vertical-align:middle;
 }
 
-.glyph {
+.shield {
+  color: darkred;
+  width: 120px;
+  height: 140px;
+  margin: 5px;
+  padding: 0px;
+  border: 0px;
   position: relative;
+  border-bottom-left-radius:  60px 90px;
+  border-bottom-right-radius: 60px 90px;
+}
+
+.glyph {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 20px;
   display: inline-block;
-  background-color: yellow;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
   width: 80px;
   height: 80px;
 }

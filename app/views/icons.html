@@ -1,14 +1,20 @@
 <p>Unsorted icons:</p>
 <div style="position: relative;">
-<div ng-repeat="icon in icons" class="shield"
-  >
-  <div
-  class="glyph"
-  ng-style="{'-webkit-mask-box-image': 'url(../images/icons/' + icon + '.svg)'}"
-  >
+  <div ng-repeat="coat in coats" class="heraldrybox"
+    >
+    <div
+    class="shield"
+      ng-style="{'background-color': coat.scheme.bg}"
+    
+    >
+      <div
+      class="glyph"
+      ng-style="{'-webkit-mask-box-image': 'url(../images/icons/' + coat.icon + '.svg)', 'background-color': coat.scheme.fg}"
+      >
+      </div>
+    </div>
+    {{coat.icon}}
   </div>
-  {{icon}}
-</div>
 </div>
 
 <!--
