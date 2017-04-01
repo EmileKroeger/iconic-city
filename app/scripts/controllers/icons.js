@@ -9,7 +9,10 @@
  */
 angular.module('iconicApp')
   .controller('IconsCtrl', function ($scope) {
-var attributedKinds = {"bear-face":"animal","bat":"shadow","angular-spider":"evil","ammonite":"sea","desert-skull":"evil","dragonfly":"swamp","elephant":"animal","eagle-emblem":"animal","evil-bat":"evil","frog":"swamp","gecko":"swamp","fox-head":"animal","giant-squid":"sea","feline":"animal","hound":"animal","lion":"animal","lynx-head":"animal","horse-head":"animal","octopus":"sea","sea-serpent":"sea","poison":"evil","raven":"shadow","shark-jaws":"sea","spider-alt":"evil","squid-head":"sea","squid":"sea","stag-head":"animal","swan":"swamp","turtle-shell":"swamp","turtle":"swamp","vulture":"shadow","wasp-sting":"evil","white-cat":"animal","wolf-head":"animal","wolf-howl":"animal","snake":"evil","scorpion":"evil","seahorse":"sea","snake-totem":"evil"};
+    var icons = ['ammonite', 'angular-spider', 'bat', 'bear-face', 'bee', 'bull-horns', 'butterfly', 'chess-knight', 'desert-skull', 'donkey', 'dragonfly', 'eagle-emblem', 'elephant', 'evil-bat', 'falcon-moon', 'feline', 'fox-head', 'frog', 'gecko', 'giant-squid', 'goat', 'gold-scarab', 'griffin-symbol', 'horse-head', 'horseshoe', 'hound', 'lion', 'lynx-head', 'minotaur', 'mounted-knight', 'octopus', 'ouroboros', 'owl', 'paw-print', 'pegasus', 'pig', 'poison', 'raven', 'salamander', 'scarab-beetle', 'scorpion', 'sea-serpent', 'seahorse', 'shark-jaws', 'snake-totem', 'snake', 'spider-alt', 'spiked-snail', 'squid-head', 'squid', 'stag-head', 'swan', 'turtle-shell', 'turtle', 'vulture', 'wasp-sting', 'werewolf', 'white-cat', 'wolf-head', 'wolf-howl'];
+
+var attributedKinds = {"bear-face":"animal","bat":"shadow","angular-spider":"evil","ammonite":"sea","desert-skull":"evil","dragonfly":"swamp","elephant":"animal","eagle-emblem":"animal","evil-bat":"evil","frog":"swamp","gecko":"swamp","fox-head":"animal","giant-squid":"sea","feline":"animal","hound":"animal","lion":"animal","lynx-head":"animal","horse-head":"animal","octopus":"sea","sea-serpent":"sea","poison":"evil","raven":"shadow","shark-jaws":"sea","spider-alt":"evil","squid-head":"sea","squid":"sea","stag-head":"animal","swan":"swamp","turtle-shell":"swamp","turtle":"swamp","vulture":"shadow","wasp-sting":"evil","white-cat":"animal","wolf-head":"animal","wolf-howl":"animal","snake":"evil","scorpion":"evil","seahorse":"sea","snake-totem":"evil","donkey":"mundane","goat":"mundane","pig":"mundane","bee":"insect","scarab-beetle":"insect","butterfly":"insect","gold-scarab":"insect","griffin-symbol":"animal","minotaur":"animal","werewolf":"animal","pegasus":"animal","owl":"animal","ouroboros":"animal"};
+
     var colorSchemes = [
       {
         name: "undecided",
@@ -20,6 +23,16 @@ var attributedKinds = {"bear-face":"animal","bat":"shadow","angular-spider":"evi
         name: "animal",
         fg: "black",
         bg: "lightgrey",
+      },
+      {
+        name: "mundane",
+        fg: "brown",
+        bg: "lightgrey",
+      },
+      {
+        name: "insect",
+        fg: "yellow",
+        bg: "blue",
       },
       {
         name: "ice",
@@ -57,10 +70,13 @@ var attributedKinds = {"bear-face":"animal","bat":"shadow","angular-spider":"evi
       });
       return found;
     }
-    $scope.scheme = colorSchemes[1];
-    var icons = ['ammonite', 'angular-spider', 'bat', 'bear-face', 'bee', 'bull-horns', 'butterfly', 'chess-knight', 'desert-skull', 'donkey', 'dragonfly', 'eagle-emblem', 'elephant', 'evil-bat', 'falcon-moon', 'feline', 'fox-head', 'frog', 'gecko', 'giant-squid', 'goat', 'gold-scarab', 'griffin-symbol', 'horse-head', 'horseshoe', 'hound', 'lion', 'lynx-head', 'minotaur', 'mounted-knight', 'octopus', 'ouroboros', 'owl', 'paw-print', 'pegasus', 'pig', 'poison', 'raven', 'salamander', 'scarab-beetle', 'scorpion', 'sea-serpent', 'seahorse', 'shark-jaws', 'snake-totem', 'snake', 'spider-alt', 'spiked-snail', 'squid-head', 'squid', 'stag-head', 'swan', 'turtle-shell', 'turtle', 'vulture', 'wasp-sting', 'werewolf', 'white-cat', 'wolf-head', 'wolf-howl'];
+    //$scope.scheme = colorSchemes[1];
     //$scope.icons = icons; //[icons[0], icons[1]];
-    $scope.coats = [];
+    $scope.schemes = colorSchemes;
+    $scope.coatsByFamily = [];
+    
+    // Now build the stuff to display
+    
     icons.forEach(function(icon, i) {
       //console.debug([icon, i]);
       var schemeIndex = findSchemeIndex(attributedKinds[icon]);
@@ -69,6 +85,7 @@ var attributedKinds = {"bear-face":"animal","bat":"shadow","angular-spider":"evi
         "schemeIndex": schemeIndex,
         "scheme": colorSchemes[schemeIndex],
       };
+      // Define click callback
       coat.cycle = function() {
         console.debug("cycle")
         coat.schemeIndex = (coat.schemeIndex + 1) % colorSchemes.length;
@@ -80,6 +97,11 @@ var attributedKinds = {"bear-face":"animal","bat":"shadow","angular-spider":"evi
         }
         console.log("var attributedKinds = " + JSON.stringify(attributedKinds) + ";");
       };
-      $scope.coats.push(coat);
+      // Now assign it to the right family
+      var family = colorSchemes[schemeIndex].name;
+      if (!$scope.coatsByFamily[family]) {
+        $scope.coatsByFamily[family] = []
+      }
+      $scope.coatsByFamily[family].push(coat);
     })
   });

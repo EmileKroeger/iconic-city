@@ -1,18 +1,21 @@
 <p>Unsorted icons:</p>
 <div style="position: relative;">
-  <div ng-repeat="coat in coats" class="heraldrybox"
-    >
-    {{coat.icon}}<br>
-    {{coat.scheme.name}}
-    <div
-    class="shield"
-      ng-style="{'background-color': coat.scheme.bg}"
-      ng-click="coat.cycle();"
-    >
-      <div
-      class="glyph"
-      ng-style="{'-webkit-mask-box-image': 'url(../images/icons/' + coat.icon + '.svg)', 'background-color': coat.scheme.fg}"
+  <div ng-repeat="family in schemes">
+    <h1>{{family.name}}</h1>
+    <div ng-repeat="coat in coatsByFamily[family.name]" class="heraldrybox"
       >
+      {{coat.icon}}<br>
+      {{coat.scheme.name}}
+      <div
+      class="shield"
+        ng-style="{'background-color': coat.scheme.bg}"
+        ng-click="coat.cycle();"
+      >
+        <div
+        class="glyph"
+        ng-style="{'-webkit-mask-box-image': 'url(../images/icons/' + coat.icon + '.svg)', 'background-color': coat.scheme.fg}"
+        >
+        </div>
       </div>
     </div>
   </div>
