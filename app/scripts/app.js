@@ -31,6 +31,10 @@ angular
         templateUrl: 'views/icons.html',
         controller: 'IconsCtrl'
       })
+      .when('/bykind/:kind', {
+        templateUrl: 'views/bykind.html',
+        controller: 'BykindCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

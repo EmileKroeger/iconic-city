@@ -96,6 +96,7 @@ body {
   position: relative;
   border-bottom-left-radius:  60px 90px;
   border-bottom-right-radius: 60px 90px;
+  border: 1px solid black;
 }
 
 .glyph {
