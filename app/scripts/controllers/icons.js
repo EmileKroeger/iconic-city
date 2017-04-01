@@ -11,24 +11,39 @@ angular.module('iconicApp')
   .controller('IconsCtrl', function ($scope) {
     var colorSchemes = [
       {
-        bg: "red",
-        fg: "yellow",
-      },
-      {
-        bg: "blue",
+        name: "undecided",
         fg: "white",
-      },
-      {
-        bg: "brown",
-        fg: "lightgreen",
-      },
-      {
-        bg: "green",
-        fg: "blue",
-      },
-      {
         bg: "grey",
+      },
+      {
+        name: "animal",
         fg: "black",
+        bg: "green",
+      },
+      {
+        name: "ice",
+        fg: "white",
+        bg: "blue",
+      },
+      {
+        name: "swamp",
+        fg: "lightgreen",
+        bg: "brown",
+      },
+      {
+        name: "sea",
+        fg: "lightblue",
+        bg: "blue",
+      },
+      {
+        name: "evil",
+        fg: "darkred",
+        bg: "black",
+      },
+      {
+        name: "shadow",
+        fg: "darkgrey",
+        bg: "black",
       },
     ];
     $scope.scheme = colorSchemes[1];
@@ -36,11 +51,18 @@ angular.module('iconicApp')
     $scope.icons = icons; //[icons[0], icons[1]];
     $scope.coats = [];
     icons.forEach(function(icon, i) {
-      console.debug([icon, i]);
+      //console.debug([icon, i]);
+      var schemeIndex = 0;
       var coat = {
         "icon": icon,
-        "scheme": colorSchemes[i % colorSchemes.length],
+        "schemeIndex": schemeIndex,
+        "scheme": colorSchemes[schemeIndex],
       };
-      $scope.coats.push(coat)
+      coat.cycle = function() {
+        console.debug("cycle")
+        coat.schemeIndex = (coat.schemeIndex + 1) % colorSchemes.length;
+        coat.scheme = colorSchemes[coat.schemeIndex];
+      }
+      $scope.coats.push(coat);
     })
   });

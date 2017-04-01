@@ -2,10 +2,12 @@
 <div style="position: relative;">
   <div ng-repeat="coat in coats" class="heraldrybox"
     >
+    {{coat.icon}}<br>
+    {{coat.scheme.name}}
     <div
     class="shield"
       ng-style="{'background-color': coat.scheme.bg}"
-    
+      ng-click="coat.cycle();"
     >
       <div
       class="glyph"
@@ -13,7 +15,6 @@
       >
       </div>
     </div>
-    {{coat.icon}}
   </div>
 </div>
 
