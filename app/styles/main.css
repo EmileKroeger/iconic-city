@@ -90,6 +90,7 @@ body {
   padding: 5px;
   margin: 5px;
   position: relative;
+  vertical-align:middle;
   /*
   mask-image: url(../images/icons/ammonite.svg),
                        linear-gradient(-45deg,
@@ -100,8 +101,15 @@ body {
  -webkit-mask-box-image: url(http://www.clker.com/cliparts/F/5/I/M/f/U/running-icon-white-on-transparent-background-md.png);
   */
 
- -webkit-mask-box-image: url(../images/icons/ammonite.svg)  100 100 0 0 round round;
- 
-  
 
+}
+
+.glyph {
+  position: relative;
+  display: inline-block;
+  background-color: yellow;
+  width: 80px;
+  height: 80px;
+  -webkit-mask-box-image: url(../images/icons/angular-spider.svg);
+  
 }
