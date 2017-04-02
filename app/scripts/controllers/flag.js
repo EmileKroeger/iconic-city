@@ -29,22 +29,38 @@ angular.module('iconicApp')
         "background-color": color,
       });
     }
+    function getOffsetForDiagonal(border, base, len) {
+      // Formula for keeping constant widths
+      var hypo = Math.sqrt(len * len + base * base);
+      var cosA = len / hypo;
+      var sinA = base / hypo;
+      return border * (1 - cosA) / sinA;
+    }
     function addHorizontalFlag(elements, x, y, wid, hei, widTail,
-      border, color, borderColor) {
-        // We need to calculate an offset to keep a correct diagonal
-        // border
-        var hypo = Math.sqrt(widTail * widTail + hei * hei);
-        var cosA = widTail / hypo;
-        var sinA = hei / hypo;
-        var shrink = border * (1 - cosA) / sinA;
+      border, color, borderColor, tails) {
+        //var tails = 1;
+        // Calculate all the needed positions
+        var subhei = (hei - (2 * border)) / tails;
+        var tailHei = subhei + 2 * border;
+        var subwid = subhei * (widTail / tailHei);
+        var shrink = getOffsetForDiagonal(border, tailHei, widTail);
+        // Add main "body" rectangle
         addRectangle(elements, x, y, wid, hei, borderColor);
         addRectangle(elements, x + border, y + border, wid - border - shrink,
           hei - (2 * border), color);
-        addTriangle(elements, x + wid, y, widTail, hei, borderColor);
-        var subhei = hei - (2 * border);
-        var subwid = subhei * (widTail / hei)
-        addTriangle(elements, x + wid - shrink, y + border, subwid, subhei, color);
+        // Add background tails
+        for (var tail = 0; tail < tails; tail++) {
+          var sttop = (y + border) + (subhei * tail);
+          addTriangle(elements, x + wid, sttop - border, widTail, tailHei, borderColor);
+        }
+        // Add foreground tails
+        for (var tail = 0; tail < tails; tail++) {
+          var sttop = (y + border) + (subhei * tail);
+          addTriangle(elements, x + wid - shrink, sttop, subwid, subhei, color);
+        }
     }
     addHorizontalFlag($scope.elements, 0, 0, 300, 300, 70, 40,
-      "yellow", "red");
+      "yellow", "red", 3);
+      addHorizontalFlag($scope.elements, 0, 320, 300, 300, 70, 40,
+        "yellow", "red", 1);
   });
