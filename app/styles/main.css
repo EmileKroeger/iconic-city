@@ -99,6 +99,12 @@ body {
   border: 1px solid black;
 }
 
+.shield.bordered {
+  width: 70px;
+  height: 90px;
+  border: 25px solid red;
+}
+
 .glyph {
   position: absolute;
   left: 50%;
@@ -110,4 +116,10 @@ body {
   border: 0px;
   width: 80px;
   height: 80px;
+}
+
+.shield.bordered .glyph {
+  top: 10px;
+  width: 60px;
+  height: 60px;
 }

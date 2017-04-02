@@ -21,6 +21,7 @@ angular.module('iconicApp')
     console.debug(variants);
     
     $scope.coats = [];
+    var classes = ["simple", "bordered", "crested", "triple"]
     
     var iconNum = 0;
     
@@ -29,10 +30,11 @@ angular.module('iconicApp')
       if (sIconData.attributedKinds[icon] == $scope.kind) {
         var coat = {
           "icon": icon,
-          "scheme": variants[iconNum],
+          "scheme": variants[iconNum % variants.length],
+          "class": classes[iconNum % classes.length],
         };
         $scope.coats.push(coat);
-        iconNum = (iconNum + 1) % variants.length;
+        iconNum = iconNum + 1;
       }
     });
     

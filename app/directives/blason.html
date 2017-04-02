@@ -1,7 +1,8 @@
 <div
   class="shield"
-  ng-style="{'background-color': content.scheme.bg}"
+  ng-style="{'background-color': content.scheme.bg, 'border-color': content.scheme.fg}"
   ng-click="content.cycle($event);"
+  ng-class="content.class"
 >
   <div
     class="glyph"
