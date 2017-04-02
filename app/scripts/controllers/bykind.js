@@ -20,7 +20,7 @@ angular.module('iconicApp')
     }
     
     $scope.coats = [];
-    var classes = ["simple", "bordered", "crested", "triple"]
+    var classes = ["simple", "bordered", "crested", "triple", "quartered"]
     
     var iconNum = 0;
     

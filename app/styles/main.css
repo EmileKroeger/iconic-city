@@ -87,13 +87,13 @@ body {
 }
 
 .shield {
-  color: darkred;
+  position: relative;
+  overflow: hidden;
   width: 120px;
   height: 140px;
   margin: 5px;
   padding: 0px;
   border: 0px;
-  position: relative;
   border-bottom-left-radius:  60px 90px;
   border-bottom-right-radius: 60px 90px;
   border: 1px solid black;
@@ -138,6 +138,25 @@ body {
 }
 
 .shield.triple .glyph {
+  width: 40px;
+  height: 40px;
+}
+
+.toprightquarter {
+  position: absolute;
+  left: 50%;
+  width: 50%;
+  height: 60px;
+}
+
+.bottomleftquarter {
+  position: absolute;
+  top: 60px;
+  width: 50%;
+  height: 80px;
+}
+
+.quartered.quartered .glyph {
   width: 40px;
   height: 40px;
 }

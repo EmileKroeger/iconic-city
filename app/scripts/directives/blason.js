@@ -74,6 +74,34 @@ angular.module('iconicApp')
               'top': '70px',
             },
           }];
+        } else if (cls == "quartered") {
+          elements = [{
+            cls: "toprightquarter",
+            style: {
+              'background-color': scheme.fg,
+            },
+          }, {
+            cls: "bottomleftquarter",
+            style: {
+              'background-color': scheme.fg,
+            },
+          }, {
+            cls: "glyph",
+            style: {
+              '-webkit-mask-box-image': iconUrl,
+              'background-color': scheme.fg,
+              'left': '25%',
+              'top': '10px',
+            },
+          }, {
+            cls: "glyph",
+            style: {
+              '-webkit-mask-box-image': iconUrl,
+              'background-color': scheme.fg,
+              'left': '75%',
+              'top': '70px',
+            },
+          }];
         }
         scope.elements = elements;
         //'border-color': content.scheme.fg
