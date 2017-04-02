@@ -22,93 +22,305 @@ angular.module('iconicApp')
       },
       {
         name: "objects",
-        fg: "grey",
+        fg: "black",
         bg: "yellow",
+        variants: [
+          {
+            fg: "grey",
+            bg: "white",
+          },
+          {
+            fg: "darkred",
+            bg: "white",
+          },
+          {
+            fg: "darkblue",
+            bg: "white",
+          },
+        ],
       },
       {
         name: "wizards",
         fg: "purple",
         bg: "lightblue",
+        variants: [
+          {
+            fg: "lightblue",
+            bg: "purple",
+          },
+          {
+            fg: "purple",
+            bg: "black",
+          },
+          {
+            fg: "purple",
+            bg: "white",
+          },
+          {
+            fg: "white",
+            bg: "purple",
+          },
+        ],
       },
       {
         name: "heavenly",
         fg: "lightblue",
         bg: "white",
+        variants: [
+          {
+            fg: "yellow",
+            bg: "white",
+          },
+          {
+            fg: "white",
+            bg: "lightblue",
+          },
+          {
+            fg: "yellow",
+            bg: "lightblue",
+          },
+        ]
       },
       {
         name: "mystical",
         fg: "pink",
         bg: "purple",
+        variants: [
+          {
+            fg: "purple",
+            bg: "black",
+          },
+          {
+            fg: "green",
+            bg: "black",
+          },
+          {
+            fg: "lightblue",
+            bg: "purple",
+          },
+          {
+            fg: "white",
+            bg: "purple",
+          },
+        ]
       },
       {
         name: "work",
         fg: "black",
         bg: "grey",
+        variants: [
+          {
+            fg: "black",
+            bg: "white",
+          },
+        ]
       },
       {
         name: "abstract",
         fg: "white",
         bg: "red",
+        variants: [
+          {
+            fg: "white",
+            bg: "blue",
+          },
+        ]
       },
       {
         name: "nature",
         fg: "yellow",
         bg: "green",
+        variants: [
+          {
+            fg: "green",
+            bg: "white",
+          },
+          {
+            fg: "green",
+            bg: "yellow",
+          },
+        ]
       },
       {
         name: "military",
-        fg: "grey",
+        fg: "black",
         bg: "red",
+        variants: [
+          {
+            fg: "black",
+            bg: "yellow",
+          },
+          {
+            fg: "red",
+            bg: "yellow",
+          },
+          {
+            fg: "white",
+            bg: "red",
+          },
+          {
+            fg: "yellow",
+            bg: "red",
+          },
+        ]
       },
       {
         name: "fire",
         fg: "red",
         bg: "yellow",
+        variants: [
+          {
+            fg: "yellow",
+            bg: "red",
+          },
+          {
+            fg: "red",
+            bg: "black",
+          },
+          {
+            fg: "yellow",
+            bg: "black",
+          },
+        ]
       },
       {
         name: "building",
-        fg: "grey",
-        bg: "green",
+        fg: "black",
+        bg: "grey",
+        variants: [
+          {
+            fg: "black",
+            bg: "yellow",
+          },
+          {
+            fg: "grey",
+            bg: "white",
+          },
+        ]
       },
       {
         name: "noble",
         fg: "yellow",
         bg: "purple",
+        variants: [
+          {
+            fg: "yellow",
+            bg: "red",
+          },
+          {
+            fg: "purple",
+            bg: "yellow",
+          },
+          {
+            fg: "yellow",
+            bg: "blue",
+          },
+        ]
       },
       {
         name: "animal",
-        fg: "black",
-        bg: "lightgrey",
+        fg: "yellow",
+        bg: "red",
+        variants: [
+          {
+            fg: "red",
+            bg: "yellow",
+          },
+          {
+            fg: "black",
+            bg: "yellow",
+          },
+          {
+            fg: "black",
+            bg: "green",
+          },
+          {
+            fg: "yellow",
+            bg: "green",
+          },
+        ]
       },
       {
         name: "mundane",
         fg: "brown",
         bg: "lightgrey",
+        variants: [
+          {
+            fg: "black",
+            bg: "grey",
+          },
+        ]
       },
       {
         name: "insect",
         fg: "yellow",
         bg: "blue",
+        variants: [
+          {
+            fg: "green",
+            bg: "white",
+          },
+          {
+            fg: "black",
+            bg: "yellow",
+          },
+        ]
       },
       {
         name: "swamp",
         fg: "brown",
         bg: "lightgreen",
+        variants: [
+          {
+            fg: "white",
+            bg: "green",
+          },
+          {
+            fg: "black",
+            bg: "lightgreen",
+          },
+        ]
       },
       {
         name: "sea",
         fg: "lightgreen",
         bg: "blue",
+        variants: [
+          {
+            fg: "blue",
+            bg: "lightgreen",
+          },
+        ]
       },
       {
         name: "evil",
         fg: "darkred",
         bg: "black",
+        variants: [
+          {
+            fg: "red",
+            bg: "black",
+          },
+        ]
       },
       {
         name: "shadow",
         fg: "darkgrey",
         bg: "black",
+        variants: [
+          {
+            fg: "black",
+            bg: "darkgrey",
+          },
+          {
+            fg: "black",
+            bg: "blue",
+          },
+          {
+            fg: "blue",
+            bg: "black",
+          },
+        ]
       },
     ];
     function findSchemeIndex(name) {

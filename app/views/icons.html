@@ -1,12 +1,12 @@
 <p>Unsorted icons:</p>
 <div style="position: relative;">
   <div ng-repeat="family in schemes">
-    <h1>{{family.name}}</h1>
+    <h1><a href="/#/bykind/{{family.name}}">{{family.name}}</a></h1>
     <div ng-repeat="coat in coatsByFamily[family.name]" class="heraldrybox"
       >
       {{coat.icon}}<br>
       {{coat.scheme.name}}
-      <blason content="coat">toto</blason>
+      <blason content="coat" />
     </div>
   </div>
 </div>
