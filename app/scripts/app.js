@@ -35,6 +35,10 @@ angular
         templateUrl: 'views/bykind.html',
         controller: 'BykindCtrl'
       })
+      .when('/flag', {
+        templateUrl: 'views/flag.html',
+        controller: 'FlagCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
