@@ -1,12 +1,12 @@
 <div
   class="shield"
-  ng-style="{'background-color': content.scheme.bg, 'border-color': content.scheme.fg}"
+  ng-style="{'background-color': content.scheme.bg}"
   ng-click="content.cycle($event);"
   ng-class="content.class"
 >
-  <div
-    class="glyph"
-    ng-style="{'-webkit-mask-box-image': 'url(../images/icons/' + content.icon + '.svg)', 'background-color': content.scheme.fg}"
+  <div ng-repeat="element in elements"
+    ng-class="element.cls"
+    ng-style="element.style"
   >
   </div>
 </div>

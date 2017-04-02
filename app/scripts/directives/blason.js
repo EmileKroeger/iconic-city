@@ -13,7 +13,70 @@ angular.module('iconicApp')
       restrict: 'E',
       scope: { content: '='},       
       link: function postLink(scope, element, attrs) {
-        //element.text('this is the new blason directive');
+        var scheme = scope.content.scheme;
+        var cls = scope.content.class;
+        var iconUrl = 'url(../images/icons/' + scope.content.icon + '.svg)'
+        var elements = [];
+        if (cls == "simple") {
+          elements = [{
+            cls: "glyph",
+            style: {
+              '-webkit-mask-box-image': iconUrl,
+              'background-color': scheme.fg,
+            },
+          }];
+        } else if (cls == "bordered") {
+          elements = [{
+            cls: "thickborder",
+            style: {
+              'border-color': scheme.fg,
+            },
+          }, {
+            cls: "glyph",
+            style: {
+              '-webkit-mask-box-image': iconUrl,
+              'background-color': scheme.fg,
+            },
+          }];
+        } else if (cls == "crested") {
+          elements = [{
+            cls: "topborder",
+            style: {
+              'border-color': scheme.fg,
+            },
+          }, {
+            cls: "glyph",
+            style: {
+              '-webkit-mask-box-image': iconUrl,
+              'background-color': scheme.fg,
+            },
+          }];
+        } else if (cls == "triple") {
+          elements = [{
+            cls: "glyph",
+            style: {
+              '-webkit-mask-box-image': iconUrl,
+              'background-color': scheme.fg,
+              'left': '25%',
+            },
+          }, {
+            cls: "glyph",
+            style: {
+              '-webkit-mask-box-image': iconUrl,
+              'background-color': scheme.fg,
+              'left': '75%',
+            },
+          }, {
+            cls: "glyph",
+            style: {
+              '-webkit-mask-box-image': iconUrl,
+              'background-color': scheme.fg,
+              'top': '70px',
+            },
+          }];
+        }
+        scope.elements = elements;
+        //'border-color': content.scheme.fg
       }
     };
   });

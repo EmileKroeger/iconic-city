@@ -99,10 +99,17 @@ body {
   border: 1px solid black;
 }
 
-.shield.bordered {
+.thickborder {
   width: 70px;
   height: 90px;
   border: 25px solid red;
+  border-bottom-left-radius:  60px 90px;
+  border-bottom-right-radius: 60px 90px;
+}
+
+.topborder {
+  border: 0px;
+  border-top: 40px solid red;
 }
 
 .glyph {
@@ -119,7 +126,18 @@ body {
 }
 
 .shield.bordered .glyph {
-  top: 10px;
+  top: 30px;
   width: 60px;
   height: 60px;
+}
+
+.shield.crested .glyph {
+  top: 50px;
+  width: 70px;
+  height: 70px;
+}
+
+.shield.triple .glyph {
+  width: 40px;
+  height: 40px;
 }

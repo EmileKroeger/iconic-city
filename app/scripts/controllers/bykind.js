@@ -18,7 +18,6 @@ angular.module('iconicApp')
     if (scheme.variants) {
       Array.prototype.push.apply(variants, scheme.variants);
     }
-    console.debug(variants);
     
     $scope.coats = [];
     var classes = ["simple", "bordered", "crested", "triple"]

@@ -360,6 +360,7 @@ angular.module('iconicApp')
         "icon": icon,
         "schemeIndex": schemeIndex,
         "scheme": colorSchemes[schemeIndex],
+        "class": "simple",
       };
       // Define click callback
       coat.cycle = function(evt) {
