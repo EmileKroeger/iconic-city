@@ -6,17 +6,7 @@
       >
       {{coat.icon}}<br>
       {{coat.scheme.name}}
-      <div
-      class="shield"
-        ng-style="{'background-color': coat.scheme.bg}"
-        ng-click="coat.cycle($event);"
-      >
-        <div
-        class="glyph"
-        ng-style="{'-webkit-mask-box-image': 'url(../images/icons/' + coat.icon + '.svg)', 'background-color': coat.scheme.fg}"
-        >
-        </div>
-      </div>
+      <blason content="coat">toto</blason>
     </div>
   </div>
 </div>
