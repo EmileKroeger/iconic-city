@@ -20,17 +20,17 @@ angular.module('iconicApp')
     }
     
     $scope.coats = [];
-    var classes = ["simple", "bordered", "crested", "triple", "quartered"]
+    var classes = ['simple', 'bordered', 'crested', 'triple', 'quartered'];
     
     var iconNum = 0;
     
     sIconData.icons.forEach(function(icon, i) {
       //console.debug([icon, i]);
-      if (sIconData.attributedKinds[icon] == $scope.kind) {
+      if (sIconData.attributedKinds[icon] === $scope.kind) {
         var coat = {
-          "icon": icon,
-          "scheme": variants[iconNum % variants.length],
-          "class": classes[iconNum % classes.length],
+          icon: icon,
+          scheme: variants[iconNum % variants.length],
+          class: classes[iconNum % classes.length],
         };
         $scope.coats.push(coat);
         iconNum = iconNum + 1;

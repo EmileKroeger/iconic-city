@@ -15,78 +15,78 @@ angular.module('iconicApp')
       link: function postLink(scope, element, attrs) {
         var scheme = scope.content.scheme;
         var cls = scope.content.class;
-        var iconUrl = 'url(../images/icons/' + scope.content.icon + '.svg)'
+        var iconUrl = 'url(../images/icons/' + scope.content.icon + '.svg)';
         var elements = [];
-        if (cls == "simple") {
+        if (cls === 'simple') {
           elements = [{
-            cls: "glyph",
+            cls: 'glyph',
             style: {
               '-webkit-mask-box-image': iconUrl,
               'background-color': scheme.fg,
             },
           }];
-        } else if (cls == "bordered") {
+        } else if (cls === 'bordered') {
           elements = [{
-            cls: "thickborder",
+            cls: 'thickborder',
             style: {
               'border-color': scheme.fg,
             },
           }, {
-            cls: "glyph",
+            cls: 'glyph',
             style: {
               '-webkit-mask-box-image': iconUrl,
               'background-color': scheme.fg,
             },
           }];
-        } else if (cls == "crested") {
+        } else if (cls === 'crested') {
           elements = [{
-            cls: "topborder",
+            cls: 'topborder',
             style: {
               'border-color': scheme.fg,
             },
           }, {
-            cls: "glyph",
+            cls: 'glyph',
             style: {
               '-webkit-mask-box-image': iconUrl,
               'background-color': scheme.fg,
             },
           }];
-        } else if (cls == "triple") {
+        } else if (cls === 'triple') {
           elements = [{
-            cls: "glyph",
+            cls: 'glyph',
             style: {
               '-webkit-mask-box-image': iconUrl,
               'background-color': scheme.fg,
               'left': '25%',
             },
           }, {
-            cls: "glyph",
+            cls: 'glyph',
             style: {
               '-webkit-mask-box-image': iconUrl,
               'background-color': scheme.fg,
               'left': '75%',
             },
           }, {
-            cls: "glyph",
+            cls: 'glyph',
             style: {
               '-webkit-mask-box-image': iconUrl,
               'background-color': scheme.fg,
               'top': '70px',
             },
           }];
-        } else if (cls == "quartered") {
+        } else if (cls === 'quartered') {
           elements = [{
-            cls: "toprightquarter",
+            cls: 'toprightquarter',
             style: {
               'background-color': scheme.fg,
             },
           }, {
-            cls: "bottomleftquarter",
+            cls: 'bottomleftquarter',
             style: {
               'background-color': scheme.fg,
             },
           }, {
-            cls: "glyph",
+            cls: 'glyph',
             style: {
               '-webkit-mask-box-image': iconUrl,
               'background-color': scheme.fg,
@@ -94,7 +94,7 @@ angular.module('iconicApp')
               'top': '10px',
             },
           }, {
-            cls: "glyph",
+            cls: 'glyph',
             style: {
               '-webkit-mask-box-image': iconUrl,
               'background-color': scheme.fg,

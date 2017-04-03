@@ -12,21 +12,21 @@ angular.module('iconicApp')
     $scope.elements = [];
     function addTriangle(elements, x, y, wid, hei, color) {
       elements.push({
-        left: x + "px",
-        top: y + "px",
-        'border-left': wid + "px solid " + color,
-        'border-top': (hei / 2) + "px solid rgba(0, 0, 0, 0)",
-        'border-bottom': (hei / 2) + "px solid rgba(0, 0, 0, 0)",
-        height: "0px",
+        left: x + 'px',
+        top: y + 'px',
+        'border-left': wid + 'px solid ' + color,
+        'border-top': (hei / 2) + 'px solid rgba(0, 0, 0, 0)',
+        'border-bottom': (hei / 2) + 'px solid rgba(0, 0, 0, 0)',
+        height: '0px',
       });
     }
     function addRectangle(elements, x, y, wid, hei, color) {
       elements.push({
-        left: x + "px",
-        top: y + "px",
-        height: hei + "px",
-        width: wid + "px",
-        "background-color": color,
+        left: x + 'px',
+        top: y + 'px',
+        height: hei + 'px',
+        width: wid + 'px',
+        'background-color': color,
       });
     }
     function getOffsetForDiagonal(border, base, len) {
@@ -59,8 +59,8 @@ angular.module('iconicApp')
           addTriangle(elements, x + wid - shrink, sttop, subwid, subhei, color);
         }
     }
-    addHorizontalFlag($scope.elements, 0, 0, 300, 300, 70, 40,
-      "yellow", "red", 3);
-      addHorizontalFlag($scope.elements, 0, 320, 300, 300, 70, 40,
-        "yellow", "red", 1);
+    addHorizontalFlag($scope.elements, 0, 0, 300, 300, 150, 30,
+      'white', 'blue', 3);
+    addHorizontalFlag($scope.elements, 0, 320, 300, 300, 70, 40,
+      'yellow', 'red', 1);
   });
