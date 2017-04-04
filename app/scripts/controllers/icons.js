@@ -26,10 +26,6 @@ angular.module('iconicApp')
         bg: 'yellow',
         variants: [
           {
-            fg: 'grey',
-            bg: 'white',
-          },
-          {
             fg: 'darkred',
             bg: 'white',
           },
@@ -41,73 +37,69 @@ angular.module('iconicApp')
       },
       {
         name: 'wizards',
-        fg: 'purple',
+        fg: 'darkpurple',
         bg: 'lightblue',
         variants: [
           {
             fg: 'lightblue',
-            bg: 'purple',
+            bg: 'darkpurple',
           },
           {
-            fg: 'purple',
+            fg: 'lightpurple',
             bg: 'black',
           },
           {
-            fg: 'purple',
+            fg: 'darkpurple',
             bg: 'white',
           },
           {
             fg: 'white',
-            bg: 'purple',
+            bg: 'darkpurple',
           },
         ],
       },
       {
         name: 'heavenly',
-        fg: 'lightblue',
+        fg: 'darkblue',
         bg: 'white',
         variants: [
           {
-            fg: 'yellow',
+            fg: 'darkyellow',
             bg: 'white',
           },
           {
             fg: 'white',
-            bg: 'lightblue',
+            bg: 'darkblue',
           },
           {
-            fg: 'yellow',
-            bg: 'lightblue',
+            fg: 'lightyellow',
+            bg: 'darkblue',
           },
         ]
       },
       {
         name: 'mystical',
-        fg: 'pink',
-        bg: 'purple',
+        fg: 'lightpurple',
+        bg: 'black',
         variants: [
           {
-            fg: 'purple',
-            bg: 'black',
-          },
-          {
-            fg: 'green',
+            fg: 'lightgreen',
             bg: 'black',
           },
           {
             fg: 'lightblue',
-            bg: 'purple',
+            bg: 'darkpurple',
           },
           {
             fg: 'white',
-            bg: 'purple',
+            bg: 'darkpurple',
           },
         ]
       },
       {
         name: 'work',
         fg: 'black',
-        bg: 'grey',
+        bg: 'lightgrey',
         variants: [
           {
             fg: 'black',
@@ -118,25 +110,25 @@ angular.module('iconicApp')
       {
         name: 'abstract',
         fg: 'white',
-        bg: 'red',
+        bg: 'darkred',
         variants: [
           {
             fg: 'white',
-            bg: 'blue',
+            bg: 'darkblue',
           },
         ]
       },
       {
         name: 'nature',
         fg: 'yellow',
-        bg: 'green',
+        bg: 'darkgreen',
         variants: [
           {
-            fg: 'green',
+            fg: 'darkgreen',
             bg: 'white',
           },
           {
-            fg: 'green',
+            fg: 'darkgreen',
             bg: 'yellow',
           },
         ]
@@ -144,37 +136,37 @@ angular.module('iconicApp')
       {
         name: 'military',
         fg: 'black',
-        bg: 'red',
+        bg: 'lightred',
         variants: [
           {
             fg: 'black',
             bg: 'yellow',
           },
           {
-            fg: 'red',
+            fg: 'darkred',
             bg: 'yellow',
           },
           {
             fg: 'white',
-            bg: 'red',
+            bg: 'darkred',
           },
           {
             fg: 'yellow',
-            bg: 'red',
+            bg: 'darkred',
           },
         ]
       },
       {
         name: 'fire',
-        fg: 'red',
+        fg: 'darkred',
         bg: 'yellow',
         variants: [
           {
             fg: 'yellow',
-            bg: 'red',
+            bg: 'darkred',
           },
           {
-            fg: 'red',
+            fg: 'darkred',
             bg: 'black',
           },
           {
@@ -201,11 +193,11 @@ angular.module('iconicApp')
       {
         name: 'noble',
         fg: 'yellow',
-        bg: 'purple',
+        bg: 'darkpurple',
         variants: [
           {
             fg: 'yellow',
-            bg: 'red',
+            bg: 'darkred',
           },
           {
             fg: 'purple',
@@ -213,17 +205,17 @@ angular.module('iconicApp')
           },
           {
             fg: 'yellow',
-            bg: 'blue',
+            bg: 'darkblue',
           },
         ]
       },
       {
         name: 'animal',
         fg: 'yellow',
-        bg: 'red',
+        bg: 'darkred',
         variants: [
           {
-            fg: 'red',
+            fg: 'darkred',
             bg: 'yellow',
           },
           {
@@ -232,32 +224,32 @@ angular.module('iconicApp')
           },
           {
             fg: 'black',
-            bg: 'green',
+            bg: 'lightgreen',
           },
           {
             fg: 'yellow',
-            bg: 'green',
+            bg: 'darkgreen',
           },
         ]
       },
       {
         name: 'mundane',
-        fg: 'brown',
+        fg: 'darkbrown',
         bg: 'lightgrey',
         variants: [
           {
             fg: 'black',
-            bg: 'grey',
+            bg: 'lightgrey',
           },
         ]
       },
       {
         name: 'insect',
         fg: 'yellow',
-        bg: 'blue',
+        bg: 'darkblue',
         variants: [
           {
-            fg: 'green',
+            fg: 'darkgreen',
             bg: 'white',
           },
           {
@@ -268,12 +260,12 @@ angular.module('iconicApp')
       },
       {
         name: 'swamp',
-        fg: 'brown',
+        fg: 'darkbrown',
         bg: 'lightgreen',
         variants: [
           {
             fg: 'white',
-            bg: 'green',
+            bg: 'darkgreen',
           },
           {
             fg: 'black',
@@ -284,40 +276,40 @@ angular.module('iconicApp')
       {
         name: 'sea',
         fg: 'lightgreen',
-        bg: 'blue',
+        bg: 'darkblue',
         variants: [
           {
-            fg: 'blue',
+            fg: 'darkblue',
             bg: 'lightgreen',
           },
         ]
       },
       {
         name: 'evil',
-        fg: 'darkred',
+        fg: 'lightred',
         bg: 'black',
         variants: [
           {
-            fg: 'red',
+            fg: 'lightred',
             bg: 'black',
           },
         ]
       },
       {
         name: 'shadow',
-        fg: 'darkgrey',
+        fg: 'lightgrey',
         bg: 'black',
         variants: [
           {
             fg: 'black',
-            bg: 'darkgrey',
+            bg: 'lightgrey',
           },
           {
             fg: 'black',
-            bg: 'blue',
+            bg: 'lightblue',
           },
           {
-            fg: 'blue',
+            fg: 'lightblue',
             bg: 'black',
           },
         ]

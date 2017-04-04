@@ -11,9 +11,23 @@ angular.module('iconicApp')
   .controller('ColorsCtrl', function ($scope, sIconData) {
     
     var colorValues = {
-      red: "#ff3333",
-      yellow: "#FFE000",
-      green: "#4CAF50"
+      black: 'black',
+      white: 'white',
+      lightgrey: 'lightgrey',
+      darkbrown: '#905314',
+      lightred: '#FF0000',
+      darkred: '#FF0000',
+      lightyellow: '#FFE000',
+      yellow: '#FFE000',
+      darkyellow: '#FFE000',
+      lightgreen: '#68D133',
+      darkgreen: '#199419', // '#4CAF50',
+      lightblue: '#54A2BB',
+      darkblue: '#0000b2',
+      darkpurple: '#790D79',
+      lightpurple: '#a64ca6',
+      
+      
     };
     
     function adaptScheme(scheme) {
