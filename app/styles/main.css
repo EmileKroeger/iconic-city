@@ -32,11 +32,13 @@ body {
 }
 
 /* Customize container */
+/*
 @media (min-width: 768px) {
   .container {
     max-width: 730px;
   }
 }
+*/
 .container-narrow > hr {
   margin: 30px 0;
 }
@@ -175,3 +177,10 @@ body {
   margin: 0;
 }
 
+.smallish {
+  color: grey;
+  font-size: 10px;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
