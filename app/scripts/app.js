@@ -43,6 +43,10 @@ angular
         templateUrl: 'views/colors.html',
         controller: 'ColorsCtrl'
       })
+      .when('/city', {
+        templateUrl: 'views/city.html',
+        controller: 'CityCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
