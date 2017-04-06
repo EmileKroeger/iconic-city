@@ -1,6 +1,7 @@
 
 <div style="background-color: grey;">
   <object
+    ng-repeat="dynamicSvg in dynamicSvgs"
     id="{{dynamicSvg.id}}"
     ng-attr-data="{{dynamicSvg.url}}" type="image/svg+xml"
     style="width: 200px;"
