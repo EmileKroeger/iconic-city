@@ -26,8 +26,6 @@ angular.module('iconicApp')
       darkblue: '#0000b2',
       darkpurple: '#790D79',
       lightpurple: '#a64ca6',
-      
-      
     };
     
     function adaptScheme(scheme) {
@@ -43,14 +41,14 @@ angular.module('iconicApp')
         name: scheme.name,
         fg: fg,
         bg: bg,
-      }
+      };
     }
     function getAdaptedSchemes(scheme) {
       var schemes = [adaptScheme(scheme)];
       if (scheme.variants) {
         scheme.variants.forEach(function(subScheme) {
           schemes.push(adaptScheme(subScheme));
-        })
+        });
       }
       return schemes;
     }
@@ -60,19 +58,19 @@ angular.module('iconicApp')
     angular.forEach(sIconData.attributedKinds, function(kind, icon) {
       //console.log(a + " " + b);
       if (byKind[kind] === undefined) {
-        byKind[kind] = []
+        byKind[kind] = [];
       }
       byKind[kind].push(icon);
     });
     var classes = ['simple', 'bordered', 'crested', 'triple', 'quartered'];
     var classIndex = 0;
-    var shown = {}
+    var shown = {};
     sIconData.schemes.forEach(function(scheme) {
       var icons = byKind[scheme.name];
       if (icons) {
         var schemes = getAdaptedSchemes(scheme);
         schemes.forEach(function(subScheme, i) {
-          var color = subScheme.fg + " on " + subScheme.bg;
+          var color = subScheme.fg + ' on ' + subScheme.bg;
           if (!shown[color]) {
             shown[color] = true;
             var coat = {
@@ -82,10 +80,9 @@ angular.module('iconicApp')
               color: color,
             };
             $scope.coats.push(coat);
-            classIndex = (classIndex + 1) % classes.length
-            
+            classIndex = (classIndex + 1) % classes.length;
           }
         });
       }
-    })
+    });
   });
