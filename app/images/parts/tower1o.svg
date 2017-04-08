@@ -12,7 +12,7 @@
   </rdf:RDF>
  </metadata>
  <g id="layer1" inkscape:groupmode="layer" inkscape:label="Layer 1">
-  <rect id="rect2985" style="color:#000000" height="511.35" width="330.11" y="540.44" x="208.86"/>
+  <rect id="rect2985" style="color:#000000" class="wall" height="511.35" width="330.11" y="540.44" x="208.86"/>
   <path id="rect2987" style="color:#000000" d="m155.44 398.09v58.205 18.723 65.424h438.86v-84.146-58.205h-74.309v58.205h-47.207v-58.205h-74.309v58.205h-47.207v-58.205h-74.309v58.205h-47.207v-58.205h-74.309z" inkscape:connector-curvature="0" class="feature"/>
  </g>
 </svg>

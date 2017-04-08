@@ -8,50 +8,55 @@
  * Controller of the iconicApp
  */
 angular.module('iconicApp')
-.directive( 'elemReady', function( $parse ) {
-   return {
-       restrict: 'A',
-       link: function( $scope, elem, attrs ) {
-         elem.bind('load', function() {
-             var func = $parse(attrs.elemReady);
-             func($scope, elem);
-         });
-       }
-    };
-})
-  .service('sDynamicSvg', function() {
+  .directive('onLoaded', function( $parse ) {
+     return {
+         restrict: 'A',
+         link: function( $scope, elem, attrs ) {
+           elem.bind('load', function() {
+               var func = $parse(attrs.onLoaded);
+               func($scope);
+           });
+         }
+      };
+  })
+  .service('SDynamicSvg', function() {
     var count = 0;
-    function DynamicSvg(name, color) {
+    function DynamicSvg(name, colors) {
       this.url = 'images/' + name + '.svg';
-      this.color = color;
+      this.color = colors['.feature'];
       this.id = 'dsvg' + count;
       count += 1;
     }
-    DynamicSvg.prototype.loaded = function(scope, elem) {
+    DynamicSvg.prototype.setTagColor = function(tag, color) {
+      // Helper: color one kind of tag
+      var elements = this.svgDoc.getElementsByTagName(tag);
+      for (var i=0; i<elements.length; i++) {
+        elements[i].setAttribute('fill', color);
+      }
+    };
+    DynamicSvg.prototype.setClassColor = function(cls, color) {
+      // Helper: color one class
+      var elements = this.svgDoc.getElementsByClassName(cls);
+      for (var i=0; i<elements.length; i++) {
+        elements[i].setAttribute('fill', color);
+      }
+    };
+    DynamicSvg.prototype.loaded = function() {
+      // Callback when an elemnt is loaded
       this.svgDoc = document.getElementById(this.id).contentDocument;
-      //console.debug(this.svgDoc);
-      //window.svgDoc = this.svgDoc;
-      var path = this.svgDoc.getElementsByTagName('path')[0];
-      if (path) {
-        path.setAttribute('fill', this.color);
-      } else {
-        console.log("Warning: couldn't find element in " + this.url);
-      }
-      var features = this.svgDoc.getElementsByClassName('feature');
-      console.debug(features);
-      for (var i=0; i<features.length; i++) {
-        var feature = features[i];
-        feature.setAttribute('fill', this.color);
-      }
-      //features.forEach(function(feature) {
-      //})
+      this.setTagColor('path', this.color);
+      this.setClassColor('feature', this.color);
+      this.setClassColor('wall', 'white');
     };
     return DynamicSvg;
   })
-  .controller('CityCtrl', function ($scope, sDynamicSvg) {
+  .controller('CityCtrl', function ($scope, SDynamicSvg) {
     $scope.dynamicSvgs = [
-      new sDynamicSvg('icons/chess-queen', 'green'),
-      new sDynamicSvg('icons/chess-queen', 'red'),
-      new sDynamicSvg('parts/tower1o', 'blue'),
+      //new SDynamicSvg('icons/chess-queen', {'green'),
+      //new SDynamicSvg('icons/chess-queen', 'red'),
+      new SDynamicSvg('parts/tower1o', {
+        '.feature': 'blue',
+        '.wall': 'white',
+      }),
     ];
   });
