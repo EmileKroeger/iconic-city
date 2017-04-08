@@ -22,7 +22,7 @@ angular.module('iconicApp')
   .service('sDynamicSvg', function() {
     var count = 0;
     function DynamicSvg(name, color) {
-      this.url = 'images/icons/' + name + '.svg';
+      this.url = 'images/' + name + '.svg';
       this.color = color;
       this.id = 'dsvg' + count;
       count += 1;
@@ -32,13 +32,26 @@ angular.module('iconicApp')
       //console.debug(this.svgDoc);
       //window.svgDoc = this.svgDoc;
       var path = this.svgDoc.getElementsByTagName('path')[0];
-      path.setAttribute('fill', this.color);
+      if (path) {
+        path.setAttribute('fill', this.color);
+      } else {
+        console.log("Warning: couldn't find element in " + this.url);
+      }
+      var features = this.svgDoc.getElementsByClassName('feature');
+      console.debug(features);
+      for (var i=0; i<features.length; i++) {
+        var feature = features[i];
+        feature.setAttribute('fill', this.color);
+      }
+      //features.forEach(function(feature) {
+      //})
     };
     return DynamicSvg;
   })
   .controller('CityCtrl', function ($scope, sDynamicSvg) {
     $scope.dynamicSvgs = [
-      new sDynamicSvg('chess-queen', 'green'),
-      new sDynamicSvg('chess-queen', 'red'),
+      new sDynamicSvg('icons/chess-queen', 'green'),
+      new sDynamicSvg('icons/chess-queen', 'red'),
+      new sDynamicSvg('parts/tower1o', 'blue'),
     ];
   });
