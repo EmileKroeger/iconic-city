@@ -19,11 +19,35 @@ angular.module('iconicApp')
          }
       };
   })
+  .service('SColorScheme', function() {
+    function ColorScheme(colors) {
+      var tagColors = {};
+      var classColors = {};
+      angular.forEach(colors, function(color, selector) {
+        if (selector[0] === '.') {
+          classColors[selector.slice(1)] = color;
+        } else {
+          tagColors[selector] = color;
+        }
+      });
+      this.tagColors = tagColors;
+      this.classColors = classColors;
+    }
+    ColorScheme.prototype.apply = function(dynamicSvg) {
+      angular.forEach(this.tagColors, function(color, tag) {
+        dynamicSvg.setTagColor(tag, color);
+      });
+      angular.forEach(this.classColors, function(color, cls) {
+        dynamicSvg.setClassColor(cls, color);
+      });
+    };
+    return ColorScheme;
+  })
   .service('SDynamicSvg', function() {
     var count = 0;
-    function DynamicSvg(name, colors) {
+    function DynamicSvg(name, scheme) {
       this.url = 'images/' + name + '.svg';
-      this.color = colors['.feature'];
+      this.scheme = scheme;
       this.id = 'dsvg' + count;
       count += 1;
     }
@@ -44,19 +68,20 @@ angular.module('iconicApp')
     DynamicSvg.prototype.loaded = function() {
       // Callback when an elemnt is loaded
       this.svgDoc = document.getElementById(this.id).contentDocument;
-      this.setTagColor('path', this.color);
-      this.setClassColor('feature', this.color);
-      this.setClassColor('wall', 'white');
+      this.scheme.apply(this);
     };
     return DynamicSvg;
   })
-  .controller('CityCtrl', function ($scope, SDynamicSvg) {
+  .controller('CityCtrl', function ($scope, SDynamicSvg, SColorScheme) {
+    var red = new SColorScheme({
+      'path': 'red',
+    });
+    var blueWhite = new SColorScheme({
+      '.wall': 'white',
+      '.feature': 'blue',
+    });
     $scope.dynamicSvgs = [
-      //new SDynamicSvg('icons/chess-queen', {'green'),
-      //new SDynamicSvg('icons/chess-queen', 'red'),
-      new SDynamicSvg('parts/tower1o', {
-        '.feature': 'blue',
-        '.wall': 'white',
-      }),
+      new SDynamicSvg('icons/chess-queen', red),
+      new SDynamicSvg('parts/tower1o', blueWhite),
     ];
   });
