@@ -79,9 +79,11 @@ angular.module('iconicApp')
     var blueWhite = new SColorScheme({
       '.wall': 'white',
       '.feature': 'blue',
+      '.roof': 'darkblue',
     });
     $scope.dynamicSvgs = [
       new SDynamicSvg('icons/chess-queen', red),
       new SDynamicSvg('parts/tower1o', blueWhite),
+      new SDynamicSvg('parts/house1o', blueWhite),
     ];
   });
