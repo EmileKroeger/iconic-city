@@ -54,9 +54,9 @@ angular.module('iconicApp')
           addTriangle(elements, x + wid, sttop - border, widTail, tailHei, borderColor);
         }
         // Add foreground tails
-        for (var tail = 0; tail < tails; tail++) {
-          var sttop = (y + border) + (subhei * tail);
-          addTriangle(elements, x + wid - shrink, sttop, subwid, subhei, color);
+        for (var btail = 0; btail < tails; btail++) {
+          var bsttop = (y + border) + (subhei * btail);
+          addTriangle(elements, x + wid - shrink, bsttop, subwid, subhei, color);
         }
     }
     addHorizontalFlag($scope.elements, 0, 0, 300, 300, 150, 30,

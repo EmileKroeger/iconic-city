@@ -184,3 +184,14 @@ body {
   padding: 0;
   margin: 0;
 }
+
+.partsbox {
+  position: relative;
+  width: 500px;
+  height: 200px;
+  background-color: grey;
+}
+
+.svgpart {
+  position: absolute;
+}

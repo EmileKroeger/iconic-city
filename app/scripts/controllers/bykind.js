@@ -24,7 +24,7 @@ angular.module('iconicApp')
     
     var iconNum = 0;
     
-    sIconData.icons.forEach(function(icon, i) {
+    sIconData.icons.forEach(function(icon) {
       //console.debug([icon, i]);
       if (sIconData.attributedKinds[icon] === $scope.kind) {
         var coat = {

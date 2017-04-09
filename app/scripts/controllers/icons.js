@@ -345,7 +345,7 @@ angular.module('iconicApp')
     // Now build the stuff to display
     var numColors = colorSchemes.length;
     
-    icons.forEach(function(icon, i) {
+    icons.forEach(function(icon) {
       //console.debug([icon, i]);
       var schemeIndex = sIconData.findSchemeIndex(attributedKinds[icon]);
       var coat = {
@@ -355,7 +355,7 @@ angular.module('iconicApp')
         class: 'simple',
       };
       // Define click callback
-      coat.cycle = function(evt) {
+      coat.cycle = function() {
         console.debug('cycle');
         //console.debug(evt);
         var delta = 1;

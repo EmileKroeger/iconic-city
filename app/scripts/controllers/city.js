@@ -45,11 +45,29 @@ angular.module('iconicApp')
   })
   .service('SDynamicSvg', function() {
     var count = 0;
-    function DynamicSvg(name, scheme) {
+    function DynamicSvg(name, scheme, pos) {
       this.url = 'images/' + name + '.svg';
       this.scheme = scheme;
       this.id = 'dsvg' + count;
       count += 1;
+      if(!pos) {
+        pos = {};
+      }
+      if (!pos.wid) {
+        pos.wid = 100;
+      }
+      if (!pos.x) {
+        pos.x = 10;
+      }
+      if (!pos.y) {
+        pos.y = 10;
+      }
+      this.style = {
+        width: pos.wid + 'px',
+        bottom: pos.y + 'px',
+        left: pos.x + 'px',
+      };
+      console.debug(this.style);
     }
     DynamicSvg.prototype.setTagColor = function(tag, color) {
       // Helper: color one kind of tag
@@ -82,8 +100,13 @@ angular.module('iconicApp')
       '.roof': 'darkblue',
     });
     $scope.dynamicSvgs = [
-      new SDynamicSvg('icons/chess-queen', red),
-      new SDynamicSvg('parts/tower1o', blueWhite),
+      new SDynamicSvg('icons/chess-queen', red, {
+        x: 200,
+      }),
+      new SDynamicSvg('parts/tower1o', blueWhite, {
+        x: 30,
+        wid: 200,
+      }),
       new SDynamicSvg('parts/house1o', blueWhite),
     ];
   });

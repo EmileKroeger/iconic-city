@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg id="svg9819" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" sodipodi:docname="house1o.svg" height="297mm" width="210mm" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" inkscape:version="0.91 r13725" viewBox="0 0 744.09448819 1052.3622047" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd">
+ <sodipodi:namedview id="base" bordercolor="#666666" inkscape:pageshadow="2" inkscape:window-y="0" pagecolor="#ffffff" inkscape:window-height="782" inkscape:window-maximized="0" inkscape:zoom="1.2828776" inkscape:window-x="0" showgrid="false" borderopacity="1.0" inkscape:current-layer="layer1" inkscape:cx="430.525" inkscape:cy="416.06699" inkscape:window-width="1100" inkscape:pageopacity="0.0" inkscape:document-units="px"/>
+ <metadata id="metadata9824">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g id="layer1" inkscape:groupmode="layer" inkscape:label="Layer 1">
+  <rect id="rect9827" style="color:#000000" class="wall" height="393.65" width="632.69" y="627.54" x="48.069" fill="#999"/>
+  <rect id="rect9827-8" style="color:#000000" class="roof" height="244.24" width="632.69" y="384.59" x="48.719" fill="#800000"/>
+  <g>
+   <path id="rect9844" style="color:#000000" d="m244.24 719.78c-61.897 0-111.73 62.509-111.73 140.15v161.25h223.46v-161.25c0-77.645-49.832-140.15-111.73-140.15z" inkscape:connector-curvature="0" class="window"/>
+   <rect id="rect9848" style="color:#000000" height="0" width="0" y="0" x="0"/>
+   <path id="path9854" style="color:#000000" d="m526.81 728.87c-32.748 0-59.111 29.638-59.111 66.452v76.455h118.22v-76.455c0-36.814-26.364-66.452-59.112-66.452z" inkscape:connector-curvature="0" class="window"/>
+  </g>
+ </g>
+</svg>
