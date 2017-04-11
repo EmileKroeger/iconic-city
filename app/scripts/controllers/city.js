@@ -67,7 +67,7 @@ angular.module('iconicApp')
         bottom: pos.y + 'px',
         left: pos.x + 'px',
       };
-      console.debug(this.style);
+      //console.debug(this.style);
     }
     DynamicSvg.prototype.setTagColor = function(tag, color) {
       // Helper: color one kind of tag
@@ -100,6 +100,7 @@ angular.module('iconicApp')
       '.roof': 'darkblue',
     });
     $scope.dynamicSvgs = [
+      /*
       new SDynamicSvg('icons/chess-queen', red, {
         x: 200,
       }),
@@ -108,5 +109,22 @@ angular.module('iconicApp')
         wid: 200,
       }),
       new SDynamicSvg('parts/house1o', blueWhite),
+      new SDynamicSvg('parts/houseb1', blueWhite, {
+        x: 30,
+        wid: 200,
+      }),
+      */
     ];
+    function addHouseRow(x0, y, n) {
+      for (var i=0; i<n; i++) {
+        var building = new SDynamicSvg('parts/houseb2', blueWhite, {
+          x: x0 + 200 * i,
+          y: y,
+          wid: 200,
+        });
+        $scope.dynamicSvgs.push(building);
+      }
+    }
+    addHouseRow(120, 70, 3);
+    addHouseRow(30, 0, 4);
   });
