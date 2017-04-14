@@ -117,7 +117,7 @@ angular.module('iconicApp')
     ];
     function addHouseRow(x0, y, n) {
       for (var i=0; i<n; i++) {
-        var building = new SDynamicSvg('parts/houseb2', blueWhite, {
+        var building = new SDynamicSvg('parts/houseb1', blueWhite, {
           x: x0 + 200 * i,
           y: y,
           wid: 200,
