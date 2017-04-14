@@ -89,24 +89,63 @@ angular.module('iconicApp')
       this.buildings = [];
       this.grid = {};
     }
+    GridPlacer.prototype.fillLineI = function(i0, j0, iRange, callback) {
+      //console.debug("linei i=" + i0 + "+" + iRange + " j=" + j0);
+      for(var i = 0; i < i0 + iRange; i++) {
+        callback(i, j0, true);
+      }
+    };
+    GridPlacer.prototype.fillLineJ = function(i0, j0, jRange, callback) {
+      //console.debug("linej i=" + i0 + " j=" + j0 + "+" + jRange);
+      for(var j = j0; j < j0 + jRange; j++) {
+        callback(i0, j, false);
+      }
+    };
+    GridPlacer.prototype.fillRect = function(
+      i0, j0, iRange, jRange, callback) {
+      //console.debug("??? i=" + i0 + "+" + iRange + " j=" + j0 + "+" +jRange);
+      if (iRange <= 1) {
+        this.fillLineJ(i0, j0, jRange, callback);
+      } else if (jRange <= 1) {
+        this.fillLineI(i0, j0, iRange, callback);
+      } else {
+        var rand = Math.random();
+        if (rand < 0.5) {
+          // Split by i
+          var iMid = Math.floor(iRange / 2);
+          this.fillRect(i0, j0, iMid, jRange, callback);
+          this.fillRect(i0 + iMid, j0, iRange - iMid, jRange, callback);
+        } else {
+          // Split by j
+          var jMid = Math.floor(jRange / 2);
+          this.fillRect(i0, j0, iRange, jMid, callback);
+          this.fillRect(i0, j0 + jMid, iRange, jRange - jMid, callback);
+        }
+      }
+    };
     GridPlacer.prototype.fill = function(buildingBag, colorBag) {
+      var self = this;
+      this.fillRect(0, 0, this.wid, this.hei, function(i, j, flip) {
+        var key = i + '-' + j;
+        var buildingImage = buildingBag.draw();
+        var dX = Math.random() * 10;
+        var dY = Math.random() * 10;
+        var building = new SDynamicSvg(buildingImage, colorBag.draw(), {
+          x: self.deltaX * (i + self.hei - j) + dX,
+          y: self.deltaY * (i + j) + dY,
+          wid: self.buildingWid,
+          flip: flip,
+        });
+        self.grid[key] = building;
+      });
+      /*
       for(var i = 0; i < this.wid; i++) {
         var flip = sRandomUtils.coinflip();
         for(var j = 0; j < this.hei; j++) {
-          var key = i + '-' + j;
-          this.grid[key] = building;
-          var buildingImage = buildingBag.draw();
-          var dX = Math.random() * 10;
-          var dY = Math.random() * 10;
-          var building = new SDynamicSvg(buildingImage, colorBag.draw(), {
-            x: this.deltaX * (i + this.hei - j) + dX,
-            y: this.deltaY * (i + j) + dY,
-            wid: this.buildingWid,
-            flip: flip,
-          });
           //this.buildings.push(building);
         }
       }
+      */
     };
     GridPlacer.prototype.iterBuildings = function(callback) {
       // TODO: sort or something
