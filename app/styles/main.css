@@ -192,6 +192,13 @@ body {
   background-color: grey;
 }
 
+.citybox {
+  position: relative;
+  width: 1200px;
+  height: 600px;
+  background-color: green;
+}
+
 .svgpart {
   position: absolute;
 }

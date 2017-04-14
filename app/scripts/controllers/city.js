@@ -155,13 +155,15 @@ angular.module('iconicApp')
     function addHouseRow(x0, y, n) {
       for (var i=0; i<n; i++) {
         var building = new SDynamicSvg(houseBag.draw(), colorBag.draw(), {
-          x: x0 + 200 * i,
-          y: y,
+          x: x0 + 100 * i,
+          y: y - 20 * i,
           wid: 200,
         });
         $scope.dynamicSvgs.push(building);
       }
     }
-    addHouseRow(120, 70, 3);
-    addHouseRow(30, 0, 4);
+    addHouseRow(480, 340, 3);
+    addHouseRow(300, 300, 5);
+    addHouseRow(120, 260, 6);
+    addHouseRow(30, 200, 5);
   });
