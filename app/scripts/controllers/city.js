@@ -43,6 +43,34 @@ angular.module('iconicApp')
     };
     return ColorScheme;
   })
+  .service('SShuffleBag', function() {
+    function ShuffleBag(items, repeat) {
+      // An ininite bag of shuffled items.
+      this.items = items.slice(0);
+      while (repeat) {
+        Array.prototype.push.apply(this.items, items);
+        repeat = repeat - 1;
+      }
+      this.pool = [];
+      this.refresh();
+    }
+    ShuffleBag.prototype.refresh = function() {
+      // Refills and shuffles the pool if needed.
+      if (!this.pool.length) {
+        this.pool = this.items.slice(0);
+        for (let i = this.pool.length; i; i--) {
+            let j = Math.floor(Math.random() * i);
+            [this.pool[i - 1], this.pool[j]] = [this.pool[j], this.pool[i - 1]];
+        }
+      }
+    };
+    ShuffleBag.prototype.draw = function() {
+      var result = this.pool.pop();
+      this.refresh();
+      return result;
+    };
+    return ShuffleBag;
+  })
   .service('SDynamicSvg', function() {
     var count = 0;
     function DynamicSvg(name, scheme, pos) {
@@ -90,10 +118,10 @@ angular.module('iconicApp')
     };
     return DynamicSvg;
   })
-  .controller('CityCtrl', function ($scope, SDynamicSvg, SColorScheme) {
-    var red = new SColorScheme({
-      'path': 'red',
-    });
+  .controller('CityCtrl', function ($scope, SDynamicSvg, SColorScheme, SShuffleBag) {
+    //var red = new SColorScheme({
+    //  'path': 'red',
+    //});
     var blueWhite = new SColorScheme({
       '.wall': 'white',
       '.feature': 'blue',
@@ -115,9 +143,11 @@ angular.module('iconicApp')
       }),
       */
     ];
+    var HOUSES = ['parts/houseb1', 'parts/houseb2'];
+    var bag = new SShuffleBag(HOUSES, 2);
     function addHouseRow(x0, y, n) {
       for (var i=0; i<n; i++) {
-        var building = new SDynamicSvg('parts/houseb1', blueWhite, {
+        var building = new SDynamicSvg(bag.draw(), blueWhite, {
           x: x0 + 200 * i,
           y: y,
           wid: 200,

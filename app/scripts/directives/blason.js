@@ -12,7 +12,7 @@ angular.module('iconicApp')
       templateUrl: 'directives/blason.html',
       restrict: 'E',
       scope: { content: '='},       
-      link: function postLink(scope, element, attrs) {
+      link: function postLink(scope /*, element, attrs*/) {
         var scheme = scope.content.scheme;
         var cls = scope.content.class;
         var iconUrl = 'url(../images/icons/' + scope.content.icon + '.svg)';
