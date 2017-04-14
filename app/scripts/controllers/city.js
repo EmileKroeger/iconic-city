@@ -79,6 +79,35 @@ angular.module('iconicApp')
       coinflip: coinflip,
     };
   })
+  .service('SGridPlacer', function(SDynamicSvg, sRandomUtils) {
+    function GridPlacer(wid, hei) {
+      this.wid = wid;
+      this.hei = hei;
+      this.deltaX = 100;
+      this.buildingWid = 200;
+      this.deltaY = 30;
+      this.buildings = [];
+    }
+    GridPlacer.prototype.fill = function(buildingBag, colorBag) {
+      for(var i = this.wid - 1; i >= 0; i--) {
+        for(var j = this.hei - 1; j >= 0; j--) {
+          var buildingImage = buildingBag.draw();
+          var building = new SDynamicSvg(buildingImage, colorBag.draw(), {
+            x: this.deltaX * (i + this.hei - j),
+            y: this.deltaY * (i + j),
+            wid: this.buildingWid,
+            flip: sRandomUtils.coinflip(),
+          });
+          this.buildings.push(building);
+        }
+      }
+    };
+    GridPlacer.prototype.iterBuildings = function(callback) {
+      // TODO: sort or something
+      this.buildings.forEach(callback);
+    };
+    return GridPlacer;
+  })
   .service('SDynamicSvg', function() {
     var count = 0;
     function DynamicSvg(name, scheme, pos) {
@@ -130,7 +159,7 @@ angular.module('iconicApp')
     return DynamicSvg;
   })
   .controller('CityCtrl', function ($scope, SDynamicSvg, SColorScheme,
-    SShuffleBag, sRandomUtils) {
+    SShuffleBag, sRandomUtils, SGridPlacer) {
     //var red = new SColorScheme({
     //  'path': 'red',
     //});
@@ -164,6 +193,16 @@ angular.module('iconicApp')
     var HOUSES = ['parts/houseb1', 'parts/houseb2',
                   'parts/houseb3', 'parts/houseb4'];
     var houseBag = new SShuffleBag(HOUSES, 2);
+    
+    var gridPlacer = new SGridPlacer(5, 5);
+    gridPlacer.fill(houseBag, colorBag);
+    gridPlacer.iterBuildings(function(building) {
+      $scope.dynamicSvgs.push(building);
+    });
+    
+    /*
+    
+    
     function addHouseRow(x0, y, n) {
       for (var i=0; i<n; i++) {
         var building = new SDynamicSvg(houseBag.draw(), colorBag.draw(), {
@@ -179,4 +218,5 @@ angular.module('iconicApp')
     addHouseRow(300, 300, 5);
     addHouseRow(120, 260, 6);
     addHouseRow(30, 200, 5);
+    */
   });
