@@ -71,6 +71,14 @@ angular.module('iconicApp')
     };
     return ShuffleBag;
   })
+  .service('sRandomUtils', function() {
+    function coinflip() {
+      return Math.random() < 0.5;
+    }
+    return {
+      coinflip: coinflip,
+    };
+  })
   .service('SDynamicSvg', function() {
     var count = 0;
     function DynamicSvg(name, scheme, pos) {
@@ -95,6 +103,9 @@ angular.module('iconicApp')
         bottom: pos.y + 'px',
         left: pos.x + 'px',
       };
+      if (pos.flip) {
+        this.style.transform = 'scaleX(-1)';
+      }
       //console.debug(this.style);
     }
     DynamicSvg.prototype.setTagColor = function(tag, color) {
@@ -118,7 +129,8 @@ angular.module('iconicApp')
     };
     return DynamicSvg;
   })
-  .controller('CityCtrl', function ($scope, SDynamicSvg, SColorScheme, SShuffleBag) {
+  .controller('CityCtrl', function ($scope, SDynamicSvg, SColorScheme,
+    SShuffleBag, sRandomUtils) {
     //var red = new SColorScheme({
     //  'path': 'red',
     //});
@@ -158,6 +170,7 @@ angular.module('iconicApp')
           x: x0 + 100 * i,
           y: y - 20 * i,
           wid: 200,
+          flip: sRandomUtils.coinflip(),
         });
         $scope.dynamicSvgs.push(building);
       }
