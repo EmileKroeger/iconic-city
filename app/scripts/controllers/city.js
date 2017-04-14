@@ -87,24 +87,37 @@ angular.module('iconicApp')
       this.buildingWid = 200;
       this.deltaY = 30;
       this.buildings = [];
+      this.grid = {};
     }
     GridPlacer.prototype.fill = function(buildingBag, colorBag) {
-      for(var i = this.wid - 1; i >= 0; i--) {
-        for(var j = this.hei - 1; j >= 0; j--) {
+      for(var i = 0; i < this.wid; i++) {
+        var flip = sRandomUtils.coinflip();
+        for(var j = 0; j < this.hei; j++) {
+          var key = i + '-' + j;
+          this.grid[key] = building;
           var buildingImage = buildingBag.draw();
+          var dX = Math.random() * 10;
+          var dY = Math.random() * 10;
           var building = new SDynamicSvg(buildingImage, colorBag.draw(), {
-            x: this.deltaX * (i + this.hei - j),
-            y: this.deltaY * (i + j),
+            x: this.deltaX * (i + this.hei - j) + dX,
+            y: this.deltaY * (i + j) + dY,
             wid: this.buildingWid,
-            flip: sRandomUtils.coinflip(),
+            flip: flip,
           });
-          this.buildings.push(building);
+          //this.buildings.push(building);
         }
       }
     };
     GridPlacer.prototype.iterBuildings = function(callback) {
       // TODO: sort or something
-      this.buildings.forEach(callback);
+      for(var i = this.wid - 1; i >= 0; i--) {
+        for(var j = this.hei - 1; j >= 0; j--) {
+          var key = i + '-' + j;
+          if (this.grid[key]) {
+            callback(this.grid[key]);
+          }
+        }
+      }
     };
     return GridPlacer;
   })
