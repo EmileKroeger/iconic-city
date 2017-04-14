@@ -127,6 +127,12 @@ angular.module('iconicApp')
       '.feature': 'blue',
       '.roof': 'darkblue',
     });
+    var redWhite = new SColorScheme({
+      '.wall': 'white',
+      '.feature': 'red',
+      '.roof': 'red',
+    });
+    var colorBag = new SShuffleBag([blueWhite, redWhite], 3);
     $scope.dynamicSvgs = [
       /*
       new SDynamicSvg('icons/chess-queen', red, {
@@ -143,11 +149,12 @@ angular.module('iconicApp')
       }),
       */
     ];
-    var HOUSES = ['parts/houseb1', 'parts/houseb2'];
-    var bag = new SShuffleBag(HOUSES, 2);
+    var HOUSES = ['parts/houseb1', 'parts/houseb2',
+                  'parts/houseb3', 'parts/houseb4'];
+    var houseBag = new SShuffleBag(HOUSES, 2);
     function addHouseRow(x0, y, n) {
       for (var i=0; i<n; i++) {
-        var building = new SDynamicSvg(bag.draw(), blueWhite, {
+        var building = new SDynamicSvg(houseBag.draw(), colorBag.draw(), {
           x: x0 + 200 * i,
           y: y,
           wid: 200,
