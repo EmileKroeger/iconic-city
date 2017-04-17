@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
-<svg id="svg2" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" inkscape:version="0.91 r13725" viewBox="0 0 200 200" height="200" width="100%" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" sodipodi:docname="houseb1.svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd">
- <sodipodi:namedview id="base" bordercolor="#666666" inkscape:window-width="1038" inkscape:pageshadow="2" inkscape:window-y="0" pagecolor="#ffffff" inkscape:zoom="6.2594781" inkscape:window-maximized="0" inkscape:window-x="64" showgrid="false" borderopacity="1.0" inkscape:current-layer="layer1" inkscape:cx="79.171829" inkscape:cy="103.73418" units="px" inkscape:window-height="841" inkscape:pageopacity="0.0" inkscape:document-units="px"/>
+<svg id="svg2" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" sodipodi:docname="houseb1.svg" viewBox="0 0 200 200" height="200" width="100%" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" inkscape:version="0.91 r13725" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd">
+ <sodipodi:namedview id="base" bordercolor="#666666" inkscape:pageshadow="2" inkscape:window-y="25" pagecolor="#ffffff" inkscape:window-maximized="0" inkscape:zoom="5.6968998" inkscape:window-x="73" inkscape:window-height="841" showgrid="false" borderopacity="1.0" inkscape:current-layer="layer1" inkscape:cx="53.602835" inkscape:cy="103.73418" units="px" inkscape:window-width="1038" inkscape:pageopacity="0.0" inkscape:document-units="px"/>
  <metadata id="metadata7">
   <rdf:RDF>
    <cc:Work rdf:about="">
@@ -13,7 +13,7 @@
  </metadata>
  <g id="layer1" inkscape:label="Layer 1" inkscape:groupmode="layer" transform="translate(0,-852.36)">
   <g stroke="#1a1a1a">
-   <path id="rect3336" style="color:#000000" d="m5.0601 965.11 47.288-40.659 47.288 40.659v87.379h-94.577z" sodipodi:nodetypes="cccccc" inkscape:connector-curvature="0" class="wall" fill="#f9f9f9"/>
+   <path id="rect3336" style="color:#000000" d="m5.0601 965.11 47.288-40.659 47.288 40.659v87.379h-94.577z" sodipodi:nodetypes="cccccc" inkscape:connector-curvature="0" class="wall left" fill="#f9f9f9"/>
    <rect id="rect3336-5" style="color:#000000" ry="0" height="87.379" width="94.577" y="965.11" x="99.712" class="wall" fill="#f9f9f9"/>
    <path id="rect3336-0" stroke-linejoin="bevel" style="color:#000000" d="m99.554 965.26-47.295-40.941 94.583 0.28217 47.288 40.659z" sodipodi:nodetypes="ccccc" inkscape:connector-curvature="0" class="roof" fill="#f00"/>
   </g>
