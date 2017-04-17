@@ -249,7 +249,7 @@ angular.module('iconicApp')
       '.feature': ['darkgreen', 'green'],
       '.roof': ['darkblue', 'blue'],
     })];
-    var colorBag = new SShuffleBag(debugColors, 3);
+    var colorBag = new SShuffleBag(seriousColors, 3);
     $scope.dynamicSvgs = [
       /*
       new SDynamicSvg('icons/chess-queen', red, {
