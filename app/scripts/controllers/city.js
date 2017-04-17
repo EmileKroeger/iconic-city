@@ -249,7 +249,7 @@ angular.module('iconicApp')
       '.feature': ['darkgreen', 'green'],
       '.roof': ['darkblue', 'blue'],
     })];
-    var colorBag = new SShuffleBag(seriousColors, 3);
+    var colorBag = new SShuffleBag(debugColors, 3);
     $scope.dynamicSvgs = [
       /*
       new SDynamicSvg('icons/chess-queen', red, {
@@ -268,7 +268,9 @@ angular.module('iconicApp')
     ];
     var HOUSES = ['parts/houseb1', 'parts/houseb2',
                   'parts/houseb3', 'parts/houseb4',
-                  'parts/towerb1', 'parts/towerb2'];
+                  'parts/towerb1', 'parts/towerb3',
+                  'parts/towerb4',
+    ];
     var houseBag = new SShuffleBag(HOUSES, 2);
     
     var gridPlacer = new SGridPlacer(5, 5);

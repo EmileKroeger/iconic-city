@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg id="svg2" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" inkscape:version="0.91 r13725" viewBox="0 0 200 300" height="300" width="100%" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" sodipodi:docname="towerb3.svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd">
+ <sodipodi:namedview id="base" bordercolor="#666666" inkscape:window-width="1023" inkscape:pageshadow="2" inkscape:window-y="0" pagecolor="#ffffff" inkscape:zoom="7.4932207" inkscape:window-maximized="0" inkscape:window-x="75" showgrid="false" borderopacity="1.0" inkscape:current-layer="layer1" inkscape:cx="89.644975" inkscape:cy="239.56247" units="px" inkscape:window-height="837" inkscape:pageopacity="0.0" inkscape:document-units="px"/>
+ <metadata id="metadata7">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g id="layer1" inkscape:label="Layer 1" inkscape:groupmode="layer" transform="translate(0,-852.36)">
+  <rect id="rect3336-5" style="color:#000000" class="wall" ry="0" height="204.91" width="44.921" stroke="#1a1a1a" y="947.57" x="99.712" fill="#f9f9f9"/>
+  <path id="rect3336-0" stroke-linejoin="bevel" style="color:#000000" d="m99.725 947.72 0.02323-40.659 46.092 40.659z" sodipodi:nodetypes="cccc" inkscape:connector-curvature="0" class="roof" stroke="#1a1a1a" fill="#f00"/>
+  <g id="g4759" transform="matrix(1,0,0,2.2756,-2.2792,-1252.7)">
+   <rect id="rect4171" style="color:#000000" height="17.678" width="10.253" y="971.51" x="108.31"/>
+   <rect id="rect4171-6" style="color:#000000" height="17.678" width="10.253" y="971.51" x="130.34"/>
+  </g>
+  <rect id="rect4778" style="color:#000000" transform="scale(-1,1)" class="wall left" ry="0" height="204.91" width="44.921" stroke="#1a1a1a" y="947.57" x="-99.671" fill="#f9f9f9"/>
+  <path id="path4780" stroke-linejoin="bevel" style="color:#000000" d="m99.658 947.72-0.023-40.66-46.092 40.66z" sodipodi:nodetypes="cccc" inkscape:connector-curvature="0" class="roof left" stroke="#1a1a1a" fill="#f00"/>
+  <g id="g4782" transform="matrix(-1,0,0,2.2756,201.66,-1252.7)">
+   <rect id="rect4784" style="color:#000000" height="17.678" width="10.253" y="971.51" x="108.31"/>
+   <rect id="rect4786" style="color:#000000" height="17.678" width="10.253" y="971.51" x="130.34"/>
+  </g>
+  <g>
+   <g stroke="#1a1a1a">
+    <rect id="rect3336-5-0" height="32.221" fill="#f9f9f9" style="color-rendering:auto;color:#000000;isolation:auto;mix-blend-mode:normal;shape-rendering:auto;solid-color:#000000;image-rendering:auto" ry="0" width="13.957" class="wall" y="887.06" x="99.546"/>
+    <path id="rect3336-0-6" stroke-linejoin="bevel" style="color-rendering:auto;color:#000000;isolation:auto;mix-blend-mode:normal;shape-rendering:auto;solid-color:#000000;image-rendering:auto" d="m99.55 887.15 0.007-12.592 14.275 12.592z" sodipodi:nodetypes="cccc" inkscape:connector-curvature="0" class="roof" fill="#f00"/>
+    <rect id="rect4778-4" ry="0" fill="#f9f9f9" style="color-rendering:auto;color:#000000;isolation:auto;mix-blend-mode:normal;shape-rendering:auto;solid-color:#000000;image-rendering:auto" transform="scale(-1,1)" width="13.957" height="32.221" class="wall left" y="887.06" x="-99.534"/>
+    <path id="path4780-4" stroke-linejoin="bevel" style="color-rendering:auto;color:#000000;isolation:auto;mix-blend-mode:normal;shape-rendering:auto;solid-color:#000000;image-rendering:auto" d="m99.53 887.15-0.007-12.593-14.275 12.593z" sodipodi:nodetypes="cccc" inkscape:connector-curvature="0" class="roof left" fill="#f00"/>
+   </g>
+   <rect id="rect4274" style="color-rendering:auto;color:#000000;isolation:auto;mix-blend-mode:normal;shape-rendering:auto;solid-color:#000000;image-rendering:auto" height="20.685" width="7.8738" y="890.62" x="88.619"/>
+   <rect id="rect4274-2" style="color-rendering:auto;color:#000000;isolation:auto;mix-blend-mode:normal;shape-rendering:auto;solid-color:#000000;image-rendering:auto" height="20.685" width="7.8738" y="890.62" x="102.59"/>
+  </g>
+ </g>
+</svg>
