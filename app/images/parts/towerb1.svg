@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg id="svg2" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" sodipodi:docname="towerb1.svg" viewBox="0 0 200 200" height="200" width="100%" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" inkscape:version="0.91 r13725" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd">
+ <sodipodi:namedview id="base" bordercolor="#666666" inkscape:pageshadow="2" inkscape:window-y="0" pagecolor="#ffffff" inkscape:window-maximized="0" inkscape:zoom="3.0162809" inkscape:window-x="64" inkscape:window-height="836" showgrid="false" borderopacity="1.0" inkscape:current-layer="layer1" inkscape:cx="94.426579" inkscape:cy="139.36194" units="px" inkscape:window-width="1113" inkscape:pageopacity="0.0" inkscape:document-units="px"/>
+ <metadata id="metadata7">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g id="layer1" inkscape:label="Layer 1" inkscape:groupmode="layer" transform="translate(0,-852.36)">
+  <rect id="rect3336-5" style="color:#000000" class="wall" ry="0" height="204.91" width="44.921" stroke="#1a1a1a" y="847.57" x="99.712" fill="#f9f9f9"/>
+  <path id="rect3336-0" stroke-linejoin="bevel" style="color:#000000" d="m99.725 847.72 0.02323-40.659 46.092 40.659z" sodipodi:nodetypes="cccc" inkscape:connector-curvature="0" class="roof" stroke="#1a1a1a" fill="#f00"/>
+  <g id="g4759" transform="matrix(1 0 0 2.2756 -2.2792 -1352.7)">
+   <rect id="rect4171" style="color:#000000" height="17.678" width="10.253" y="971.51" x="108.31"/>
+   <rect id="rect4171-6" style="color:#000000" height="17.678" width="10.253" y="971.51" x="130.34"/>
+  </g>
+  <rect id="rect4778" style="color:#000000" y="847.57" transform="scale(-1,1)" ry="0" height="204.91" width="44.921" stroke="#1a1a1a" x="-99.671" class="wall" fill="#f9f9f9"/>
+  <path id="path4780" stroke-linejoin="bevel" style="color:#000000" d="m99.658 847.72-0.0232-40.659-46.092 40.659z" sodipodi:nodetypes="cccc" inkscape:connector-curvature="0" class="roof" stroke="#1a1a1a" fill="#f00"/>
+  <g id="g4782" transform="matrix(-1 0 0 2.2756 201.66 -1352.7)">
+   <rect id="rect4784" style="color:#000000" height="17.678" width="10.253" y="971.51" x="108.31"/>
+   <rect id="rect4786" style="color:#000000" height="17.678" width="10.253" y="971.51" x="130.34"/>
+  </g>
+ </g>
+</svg>

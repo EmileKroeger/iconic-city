@@ -131,8 +131,8 @@ angular.module('iconicApp')
         var dX = Math.random() * 10;
         var dY = Math.random() * 10;
         var building = new SDynamicSvg(buildingImage, colorBag.draw(), {
-          x: self.deltaX * (i + self.hei - j) + dX,
-          y: self.deltaY * (i + j) + dY,
+          x: self.deltaX * (0.9 * i + self.hei - j) + dX,
+          y: self.deltaY * (i + 1.1 * j) + dY,
           wid: self.buildingWid,
           flip: flip,
         });
@@ -243,7 +243,8 @@ angular.module('iconicApp')
       */
     ];
     var HOUSES = ['parts/houseb1', 'parts/houseb2',
-                  'parts/houseb3', 'parts/houseb4'];
+                  'parts/houseb3', 'parts/houseb4',
+                  'parts/towerb1'];
     var houseBag = new SShuffleBag(HOUSES, 2);
     
     var gridPlacer = new SGridPlacer(5, 5);
