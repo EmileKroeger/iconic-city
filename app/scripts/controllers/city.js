@@ -20,6 +20,7 @@ angular.module('iconicApp')
       };
   })
   .service('SColorScheme', function() {
+    // Helper class, applies a dynamic configuration to a SVG object.
     function ColorScheme(colors) {
       var tagColors = {};
       var classColors = {};
@@ -225,6 +226,8 @@ angular.module('iconicApp')
       '.feature': 'red',
       '.roof': 'red',
     });
+    var seriousColors = [blueWhite, redWhite];
+    var debugColors = [];
     var colorBag = new SShuffleBag([blueWhite, redWhite], 3);
     $scope.dynamicSvgs = [
       /*
@@ -244,7 +247,7 @@ angular.module('iconicApp')
     ];
     var HOUSES = ['parts/houseb1', 'parts/houseb2',
                   'parts/houseb3', 'parts/houseb4',
-                  'parts/towerb1'];
+                  'parts/towerb1', 'parts/towerb2'];
     var houseBag = new SShuffleBag(HOUSES, 2);
     
     var gridPlacer = new SGridPlacer(5, 5);
