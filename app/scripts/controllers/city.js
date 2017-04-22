@@ -95,14 +95,18 @@ angular.module('iconicApp')
     };
   })
   .service('SGridPlacer', function(SDynamicSvg, sRandomUtils) {
-    function GridPlacer(wid, hei) {
+    function GridPlacer(wid, hei, scale) {
+      if (!scale) {
+        scale = 1;
+      }
       this.wid = wid;
       this.hei = hei;
-      this.deltaX = 100;
-      this.buildingWid = 200;
-      this.deltaY = 30;
+      this.deltaX = 100 * scale;
+      this.buildingWid = 200 * scale;
+      this.deltaY = 30 * scale;
       this.buildings = [];
       this.grid = {};
+      this.scale = scale;
     }
     GridPlacer.prototype.fillLineI = function(i0, j0, iRange, callback) {
       //console.debug("linei i=" + i0 + "+" + iRange + " j=" + j0);
@@ -153,6 +157,16 @@ angular.module('iconicApp')
       var key = i + '-' + j;
       this.grid[key] = building;
     };
+    GridPlacer.prototype.placeLandmark = function(buildingBag, colorBag) {
+      var landmarkScale = 1.2;
+      var i = sRandomUtils.randint(Math.floor(this.wid / 2), this.wid - 1);
+      var j = sRandomUtils.randint(Math.floor(this.hei / 2), this.hei - 1);
+      var key = i + '-' + j;
+      // Don't check if something was there
+      var flip = sRandomUtils.coinflip();
+      this.place(i, j, flip, buildingBag.draw(), colorBag.draw(),
+          landmarkScale);
+    };
     GridPlacer.prototype.scatter = function(buildingBag, colorBag, n, scale) {
       for (var k = 0; k < n; k++) {
         var i = sRandomUtils.randint(0, this.wid - 1);
@@ -174,17 +188,8 @@ angular.module('iconicApp')
           self.place(i, j, flip, buildingImage, color);
         }
       });
-      /*
-      for(var i = 0; i < this.wid; i++) {
-        var flip = sRandomUtils.coinflip();
-        for(var j = 0; j < this.hei; j++) {
-          //this.buildings.push(building);
-        }
-      }
-      */
     };
     GridPlacer.prototype.iterBuildings = function(callback) {
-      // TODO: sort or something
       for(var i = this.wid - 1; i >= 0; i--) {
         for(var j = this.hei - 1; j >= 0; j--) {
           var key = i + '-' + j;
@@ -287,22 +292,7 @@ angular.module('iconicApp')
     })];
     var colorBag = new SShuffleBag(seriousColors, 3);
     var stoneColorBag = new SShuffleBag([stoneColor], 1);
-    $scope.dynamicSvgs = [
-      /*
-      new SDynamicSvg('icons/chess-queen', red, {
-        x: 200,
-      }),
-      new SDynamicSvg('parts/tower1o', blueWhite, {
-        x: 30,
-        wid: 200,
-      }),
-      new SDynamicSvg('parts/house1o', blueWhite),
-      new SDynamicSvg('parts/houseb1', blueWhite, {
-        x: 30,
-        wid: 200,
-      }),
-      */
-    ];
+    $scope.dynamicSvgs = [];
     var HOUSES = [
       'parts/houseb1',
       'parts/houseb2',
@@ -322,31 +312,11 @@ angular.module('iconicApp')
     var towerBag = new SShuffleBag(TOWERS, 2);
     var landmarkBag = new SShuffleBag(LANDMARKS, 1);
     
-    var gridPlacer = new SGridPlacer(5, 5);
-    gridPlacer.scatter(landmarkBag, stoneColorBag, 1, 1.2);
+    var gridPlacer = new SGridPlacer(10, 10, 0.5);
+    gridPlacer.placeLandmark(landmarkBag, stoneColorBag);
     gridPlacer.scatter(towerBag, stoneColorBag, 3);
     gridPlacer.fill(houseBag, colorBag);
     gridPlacer.iterBuildings(function(building) {
       $scope.dynamicSvgs.push(building);
     });
-    
-    /*
-    
-    
-    function addHouseRow(x0, y, n) {
-      for (var i=0; i<n; i++) {
-        var building = new SDynamicSvg(houseBag.draw(), colorBag.draw(), {
-          x: x0 + 100 * i,
-          y: y - 20 * i,
-          wid: 200,
-          flip: sRandomUtils.coinflip(),
-        });
-        $scope.dynamicSvgs.push(building);
-      }
-    }
-    addHouseRow(480, 340, 3);
-    addHouseRow(300, 300, 5);
-    addHouseRow(120, 260, 6);
-    addHouseRow(30, 200, 5);
-    */
   });
