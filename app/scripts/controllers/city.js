@@ -138,26 +138,29 @@ angular.module('iconicApp')
         }
       }
     };
-    GridPlacer.prototype.place = function(i, j, flip, buildingImage, color) {
+    GridPlacer.prototype.place = function(i, j, flip, buildingImage, color, scale) {
+      if (!scale) {
+        scale = 1;
+      }
       var dX = Math.random() * 10;
       var dY = Math.random() * 10;
       var building = new SDynamicSvg(buildingImage, color, {
         x: this.deltaX * (0.9 * i + this.hei - j) + dX,
         y: this.deltaY * (i + 1.1 * j) + dY,
-        wid: this.buildingWid,
+        wid: (this.buildingWid * scale),
         flip: flip,
       });
       var key = i + '-' + j;
       this.grid[key] = building;
     };
-    GridPlacer.prototype.scatter = function(buildingBag, colorBag, n) {
+    GridPlacer.prototype.scatter = function(buildingBag, colorBag, n, scale) {
       for (var k = 0; k < n; k++) {
         var i = sRandomUtils.randint(0, this.wid - 1);
         var j = sRandomUtils.randint(0, this.hei - 1);
         var key = i + '-' + j;
         if (!this.grid[key]) {
           var flip = sRandomUtils.coinflip();
-          this.place(i, j, flip, buildingBag.draw(), colorBag.draw());
+          this.place(i, j, flip, buildingBag.draw(), colorBag.draw(), scale);
         }
       }
     };
@@ -320,7 +323,7 @@ angular.module('iconicApp')
     var landmarkBag = new SShuffleBag(LANDMARKS, 1);
     
     var gridPlacer = new SGridPlacer(5, 5);
-    gridPlacer.scatter(landmarkBag, stoneColorBag, 1);
+    gridPlacer.scatter(landmarkBag, stoneColorBag, 1, 1.2);
     gridPlacer.scatter(towerBag, stoneColorBag, 3);
     gridPlacer.fill(houseBag, colorBag);
     gridPlacer.iterBuildings(function(building) {
