@@ -39,7 +39,7 @@ angular.module('iconicApp')
         dynamicSvg.setTagColor(tag, color);
       });
       angular.forEach(this.classColors, function(colors, cls) {
-        if (colors.constructor == Array) {
+        if (colors.constructor === Array) {
           dynamicSvg.setClassColor(cls, colors[0], colors[1]);
         } else {
           dynamicSvg.setClassColor(cls, colors, colors);
@@ -80,8 +80,18 @@ angular.module('iconicApp')
     function coinflip() {
       return Math.random() < 0.5;
     }
+    function choose(array) {
+      var index = Math.floor(Math.random() * array.length);
+      return array[index];
+    }
+    function randint(min, max) {
+      var index = Math.floor(Math.random() * (max - min + 1));
+      return min + index;
+    }
     return {
       coinflip: coinflip,
+      choose: choose,
+      randint: randint,
     };
   })
   .service('SGridPlacer', function(SDynamicSvg, sRandomUtils) {
@@ -128,20 +138,38 @@ angular.module('iconicApp')
         }
       }
     };
+    GridPlacer.prototype.place = function(i, j, flip, buildingImage, color) {
+      var dX = Math.random() * 10;
+      var dY = Math.random() * 10;
+      var building = new SDynamicSvg(buildingImage, color, {
+        x: this.deltaX * (0.9 * i + this.hei - j) + dX,
+        y: this.deltaY * (i + 1.1 * j) + dY,
+        wid: this.buildingWid,
+        flip: flip,
+      });
+      var key = i + '-' + j;
+      this.grid[key] = building;
+    };
+    GridPlacer.prototype.scatter = function(buildingBag, colorBag, n) {
+      for (var k = 0; k < n; k++) {
+        var i = sRandomUtils.randint(0, this.wid - 1);
+        var j = sRandomUtils.randint(0, this.hei - 1);
+        var key = i + '-' + j;
+        if (!this.grid[key]) {
+          var flip = sRandomUtils.coinflip();
+          this.place(i, j, flip, buildingBag.draw(), colorBag.draw());
+        }
+      }
+    };
     GridPlacer.prototype.fill = function(buildingBag, colorBag) {
       var self = this;
       this.fillRect(0, 0, this.wid, this.hei, function(i, j, flip) {
         var key = i + '-' + j;
-        var buildingImage = buildingBag.draw();
-        var dX = Math.random() * 10;
-        var dY = Math.random() * 10;
-        var building = new SDynamicSvg(buildingImage, colorBag.draw(), {
-          x: self.deltaX * (0.9 * i + self.hei - j) + dX,
-          y: self.deltaY * (i + 1.1 * j) + dY,
-          wid: self.buildingWid,
-          flip: flip,
-        });
-        self.grid[key] = building;
+        if (!self.grid[key]) {
+          var buildingImage = buildingBag.draw();
+          var color = colorBag.draw();
+          self.place(i, j, flip, buildingImage, color);
+        }
       });
       /*
       for(var i = 0; i < this.wid; i++) {
@@ -197,7 +225,7 @@ angular.module('iconicApp')
       //console.debug(this.style);
     }
     DynamicSvg.prototype.setElementColor = function(element, leftcolor, rightcolor) {
-      var isLeft = angular.element(element).hasClass("left");
+      var isLeft = angular.element(element).hasClass('left');
       if (this.flip) {
         isLeft = !isLeft;
       }
@@ -206,7 +234,7 @@ angular.module('iconicApp')
       } else {
         element.setAttribute('fill', rightcolor);
       }
-    }
+    };
     DynamicSvg.prototype.setTagColor = function(tag, color) {
       // Helper: color one kind of tag
       var elements = this.svgDoc.getElementsByTagName(tag);
@@ -243,6 +271,11 @@ angular.module('iconicApp')
       '.feature': ['darkred', 'red'],
       '.roof': ['darkred', 'red'],
     });
+    var stoneColor = new SColorScheme({
+      '.wall': ['grey', 'lightgrey'],
+      '.feature': ['darkred', 'red'],
+      '.roof': ['darkred', 'red'],
+    });
     var seriousColors = [blueWhite, redWhite];
     var debugColors = [new SColorScheme({
       '.wall': ['darkred', 'red'],
@@ -250,6 +283,7 @@ angular.module('iconicApp')
       '.roof': ['darkblue', 'blue'],
     })];
     var colorBag = new SShuffleBag(seriousColors, 3);
+    var stoneColorBag = new SShuffleBag([stoneColor], 1);
     $scope.dynamicSvgs = [
       /*
       new SDynamicSvg('icons/chess-queen', red, {
@@ -280,10 +314,14 @@ angular.module('iconicApp')
     var LANDMARKS = [
       'parts/churchb1',
       'parts/castleb1',
-    ]
+    ];
     var houseBag = new SShuffleBag(HOUSES, 2);
+    var towerBag = new SShuffleBag(TOWERS, 2);
+    var landmarkBag = new SShuffleBag(LANDMARKS, 1);
     
     var gridPlacer = new SGridPlacer(5, 5);
+    gridPlacer.scatter(landmarkBag, stoneColorBag, 1);
+    gridPlacer.scatter(towerBag, stoneColorBag, 3);
     gridPlacer.fill(houseBag, colorBag);
     gridPlacer.iterBuildings(function(building) {
       $scope.dynamicSvgs.push(building);

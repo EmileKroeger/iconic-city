@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
-<svg id="svg2" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" sodipodi:docname="churchb1.svg" viewBox="0 0 200 300" height="300" width="250" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" inkscape:version="0.91 r13725" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd">
- <sodipodi:namedview id="base" bordercolor="#666666" inkscape:pageshadow="2" inkscape:window-y="0" pagecolor="#ffffff" inkscape:window-maximized="0" inkscape:zoom="1.6945909" inkscape:window-x="75" inkscape:window-height="837" showgrid="false" borderopacity="1.0" inkscape:current-layer="layer1" inkscape:cx="108.32802" inkscape:cy="130.50351" units="px" inkscape:window-width="1023" inkscape:pageopacity="0.0" inkscape:document-units="px"/>
+<svg id="svg2" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" inkscape:version="0.91 r13725" viewBox="0 0 200 300" height="300" width="250" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" sodipodi:docname="churchb1.svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd">
+ <sodipodi:namedview id="base" bordercolor="#666666" inkscape:window-width="1023" inkscape:pageshadow="2" inkscape:window-y="0" pagecolor="#ffffff" inkscape:zoom="4.3357697" inkscape:window-maximized="0" inkscape:window-x="75" showgrid="false" borderopacity="1.0" inkscape:current-layer="layer1" inkscape:cx="68.658016" inkscape:cy="102.82676" units="px" inkscape:window-height="837" inkscape:pageopacity="0.0" inkscape:document-units="px"/>
  <metadata id="metadata7">
   <rdf:RDF>
    <cc:Work rdf:about="">
@@ -13,33 +13,35 @@
  </metadata>
  <g id="layer1" inkscape:label="Layer 1" inkscape:groupmode="layer" transform="translate(0,-852.36)">
   <rect id="rect3336-5" style="color:#000000" class="wall" ry="0" height="204.91" width="44.921" stroke="#1a1a1a" y="947.57" x="45.712" fill="#f9f9f9"/>
-  <path id="rect3336-0" stroke-linejoin="bevel" style="color:#000000" d="m45.725 947.72 0.023-84.92 46.092 84.92z" sodipodi:nodetypes="cccc" inkscape:connector-curvature="0" stroke="#1a1a1a" class="roof" fill="#f00"/>
+  <path id="rect3336-0" stroke-linejoin="bevel" style="color:#000000" d="m45.725 947.72 0.023-84.92 46.092 84.92z" sodipodi:nodetypes="cccc" inkscape:connector-curvature="0" class="roof" stroke="#1a1a1a" fill="#f00"/>
   <g id="g4759" transform="matrix(1 0 0 2.2756 -56.279 -1252.7)">
    <rect id="rect4171" style="color:#000000" height="17.678" width="10.253" y="971.51" x="108.31"/>
    <rect id="rect4171-6" style="color:#000000" height="17.678" width="10.253" y="971.51" x="130.34"/>
   </g>
-  <path id="rect4778" style="color:#000000" d="m-45.671 947.57h44.921v109.34l24.202 36.727v58.843h-95.828v-58.475l26.705-37.194z" sodipodi:nodetypes="ccccccccc" inkscape:connector-curvature="0" transform="scale(-1,1)" stroke="#1a1a1a" fill="#f9f9f9"/>
-  <path id="path4780" stroke-linejoin="bevel" style="color:#000000" d="m45.658 947.72-0.023-84.92-46.092 84.92z" sodipodi:nodetypes="cccc" inkscape:connector-curvature="0" stroke="#1a1a1a" class="roof left" fill="#f00"/>
+  <path id="rect4778" style="color:#000000" d="m-45.671 947.57h44.921v109.34l24.202 36.727v58.843h-95.828v-58.475l26.705-37.194z" sodipodi:nodetypes="ccccccccc" inkscape:connector-curvature="0" transform="scale(-1,1)" class="wall left" stroke="#1a1a1a"/>
+  <path id="path4780" stroke-linejoin="bevel" style="color:#000000" d="m45.658 947.72-0.023-84.92-46.092 84.92z" sodipodi:nodetypes="cccc" inkscape:connector-curvature="0" class="roof left" stroke="#1a1a1a" fill="#f00"/>
   <g id="g4782" transform="matrix(-1,0,0,2.2756,147.66,-1252.7)">
    <rect id="rect4784" style="color:#000000" height="17.678" width="10.253" y="971.51" x="108.31"/>
    <rect id="rect4786" style="color:#000000" height="17.678" width="10.253" y="971.51" x="130.34"/>
   </g>
-  <path id="rect5780" stroke-linejoin="bevel" sodipodi:nodetypes="cccccccccc" stroke="#1a1a1a" fill="#f00" style="color-rendering:auto;color:#000000;isolation:auto;mix-blend-mode:normal;shape-rendering:auto;solid-color:#000000;image-rendering:auto" transform="translate(0,852.36)" class="roof" d="m45.713 203.83zm44.92-34.018v34.336h-44.689l1.123 1.5508 26 35.885h127.68l-52-71.771z" inkscape:connector-curvature="0"/>
-  <rect id="rect5816" style="color:#000000" ry="0" height="58.422" width="128.14" stroke="#1a1a1a" y="1094.1" x="72.519" class="wall" fill="#f9f9f9"/>
-  <g stroke-linejoin="bevel" stroke="#1a1a1a">
-   <path id="rect5829" style="color-rendering:auto;color:#000000;isolation:auto;mix-blend-mode:normal;shape-rendering:auto;solid-color:#000000;image-rendering:auto" transform="translate(-25,852.36)" d="m49.463 242.17c-9.808 0-17.703 7.9-17.703 17.7v40.25h35.406v-40.25c0-9.8-7.895-17.7-17.703-17.7z"/>
-   <g stroke-width=".36571">
-    <path id="path5849" style="color-rendering:auto;color:#000000;isolation:auto;mix-blend-mode:normal;shape-rendering:auto;solid-color:#000000;image-rendering:auto" d="m94.438 1098.3c-2.464 0-4.4477 4.2041-4.4477 9.4252v21.425h8.8953v-21.425c0-5.2211-1.9836-9.4252-4.4477-9.4252z" inkscape:connector-curvature="0"/>
-    <path id="path5851" style="color-rendering:auto;color:#000000;isolation:auto;mix-blend-mode:normal;shape-rendering:auto;solid-color:#000000;image-rendering:auto" d="m108.49 1098.3c-2.464 0-4.4477 4.2041-4.4477 9.4252v21.425h8.8953v-21.425c0-5.2211-1.9836-9.4252-4.4477-9.4252z" inkscape:connector-curvature="0"/>
-    <path id="path5853" style="color-rendering:auto;color:#000000;isolation:auto;mix-blend-mode:normal;shape-rendering:auto;solid-color:#000000;image-rendering:auto" d="m122.53 1098.3c-2.464 0-4.4477 4.2041-4.4477 9.4252v21.425h8.8953v-21.425c0-5.2211-1.9836-9.4252-4.4477-9.4252z" inkscape:connector-curvature="0"/>
-    <path id="path5855" style="color-rendering:auto;color:#000000;isolation:auto;mix-blend-mode:normal;shape-rendering:auto;solid-color:#000000;image-rendering:auto" d="m136.58 1098.3c-2.464 0-4.4477 4.2041-4.4477 9.4252v21.425h8.8953v-21.425c0-5.2211-1.9836-9.4252-4.4477-9.4252z" inkscape:connector-curvature="0"/>
-    <path id="path5857" style="color-rendering:auto;color:#000000;isolation:auto;mix-blend-mode:normal;shape-rendering:auto;solid-color:#000000;image-rendering:auto" d="m150.63 1098.3c-2.464 0-4.4477 4.2041-4.4477 9.4252v21.425h8.8953v-21.425c0-5.2211-1.9836-9.4252-4.4477-9.4252z" inkscape:connector-curvature="0"/>
-    <path id="path5859" style="color-rendering:auto;color:#000000;isolation:auto;mix-blend-mode:normal;shape-rendering:auto;solid-color:#000000;image-rendering:auto" d="m164.68 1098.3c-2.464 0-4.4477 4.2041-4.4477 9.4252v21.425h8.8953v-21.425c0-5.2211-1.9836-9.4252-4.4477-9.4252z" inkscape:connector-curvature="0"/>
-    <path id="path5865" style="color-rendering:auto;color:#000000;isolation:auto;mix-blend-mode:normal;shape-rendering:auto;solid-color:#000000;image-rendering:auto" d="m178.72 1098.3c-2.464 0-4.4477 4.2041-4.4477 9.4252v21.425h8.8953v-21.425c0-5.2211-1.9836-9.4252-4.4477-9.4252z" inkscape:connector-curvature="0"/>
-    <path id="path5867" style="color-rendering:auto;color:#000000;isolation:auto;mix-blend-mode:normal;shape-rendering:auto;solid-color:#000000;image-rendering:auto" d="m56.438 1088.3c-2.464 0-4.4477 4.2041-4.4477 9.4252v21.425h8.8953v-21.425c0-5.2211-1.9836-9.4252-4.4477-9.4252z" inkscape:connector-curvature="0"/>
-    <path id="path5869" style="color-rendering:auto;color:#000000;isolation:auto;mix-blend-mode:normal;shape-rendering:auto;solid-color:#000000;image-rendering:auto" d="m-7.5621 1088.3c-2.464 0-4.4477 4.2041-4.4477 9.4252v21.425h8.8953v-21.425c0-5.2211-1.9836-9.4252-4.4477-9.4252z" inkscape:connector-curvature="0"/>
+  <g stroke="#1a1a1a">
+   <path id="rect5780" stroke-linejoin="bevel" style="color-rendering:auto;color:#000000;isolation:auto;mix-blend-mode:normal;shape-rendering:auto;solid-color:#000000;image-rendering:auto" d="m45.713 203.83zm44.92-34.018v34.336h-44.689l1.123 1.5508 26 35.885h127.68l-52-71.771z" sodipodi:nodetypes="cccccccccc" transform="translate(0,852.36)" class="roof" inkscape:connector-curvature="0" fill="#f00"/>
+   <rect id="rect5816" style="color:#000000" class="wall" ry="0" height="58.422" width="128.14" y="1094.1" x="72.519" fill="#f9f9f9"/>
+   <g id="g9142" stroke-linejoin="bevel">
+    <path id="rect5829" d="m49.463 242.17c-9.808 0-17.703 7.9-17.703 17.7v40.25h35.406v-40.25c0-9.8-7.895-17.7-17.703-17.7z" style="color-rendering:auto;color:#000000;isolation:auto;mix-blend-mode:normal;shape-rendering:auto;solid-color:#000000;image-rendering:auto" transform="translate(-25,852.36)"/>
+    <g id="g9145" stroke-width=".36571">
+     <path id="path5849" style="color-rendering:auto;color:#000000;isolation:auto;mix-blend-mode:normal;shape-rendering:auto;solid-color:#000000;image-rendering:auto" inkscape:connector-curvature="0" d="m94.438 1098.3c-2.464 0-4.4477 4.2041-4.4477 9.4252v21.425h8.8953v-21.425c0-5.2211-1.9836-9.4252-4.4477-9.4252z"/>
+     <path id="path5851" style="color-rendering:auto;color:#000000;isolation:auto;mix-blend-mode:normal;shape-rendering:auto;solid-color:#000000;image-rendering:auto" inkscape:connector-curvature="0" d="m108.49 1098.3c-2.464 0-4.4477 4.2041-4.4477 9.4252v21.425h8.8953v-21.425c0-5.2211-1.9836-9.4252-4.4477-9.4252z"/>
+     <path id="path5853" style="color-rendering:auto;color:#000000;isolation:auto;mix-blend-mode:normal;shape-rendering:auto;solid-color:#000000;image-rendering:auto" inkscape:connector-curvature="0" d="m122.53 1098.3c-2.464 0-4.4477 4.2041-4.4477 9.4252v21.425h8.8953v-21.425c0-5.2211-1.9836-9.4252-4.4477-9.4252z"/>
+     <path id="path5855" style="color-rendering:auto;color:#000000;isolation:auto;mix-blend-mode:normal;shape-rendering:auto;solid-color:#000000;image-rendering:auto" inkscape:connector-curvature="0" d="m136.58 1098.3c-2.464 0-4.4477 4.2041-4.4477 9.4252v21.425h8.8953v-21.425c0-5.2211-1.9836-9.4252-4.4477-9.4252z"/>
+     <path id="path5857" style="color-rendering:auto;color:#000000;isolation:auto;mix-blend-mode:normal;shape-rendering:auto;solid-color:#000000;image-rendering:auto" inkscape:connector-curvature="0" d="m150.63 1098.3c-2.464 0-4.4477 4.2041-4.4477 9.4252v21.425h8.8953v-21.425c0-5.2211-1.9836-9.4252-4.4477-9.4252z"/>
+     <path id="path5859" style="color-rendering:auto;color:#000000;isolation:auto;mix-blend-mode:normal;shape-rendering:auto;solid-color:#000000;image-rendering:auto" inkscape:connector-curvature="0" d="m164.68 1098.3c-2.464 0-4.4477 4.2041-4.4477 9.4252v21.425h8.8953v-21.425c0-5.2211-1.9836-9.4252-4.4477-9.4252z"/>
+     <path id="path5865" style="color-rendering:auto;color:#000000;isolation:auto;mix-blend-mode:normal;shape-rendering:auto;solid-color:#000000;image-rendering:auto" inkscape:connector-curvature="0" d="m178.72 1098.3c-2.464 0-4.4477 4.2041-4.4477 9.4252v21.425h8.8953v-21.425c0-5.2211-1.9836-9.4252-4.4477-9.4252z"/>
+     <path id="path5867" style="color-rendering:auto;color:#000000;isolation:auto;mix-blend-mode:normal;shape-rendering:auto;solid-color:#000000;image-rendering:auto" inkscape:connector-curvature="0" d="m56.438 1088.3c-2.464 0-4.4477 4.2041-4.4477 9.4252v21.425h8.8953v-21.425c0-5.2211-1.9836-9.4252-4.4477-9.4252z"/>
+     <path id="path5869" style="color-rendering:auto;color:#000000;isolation:auto;mix-blend-mode:normal;shape-rendering:auto;solid-color:#000000;image-rendering:auto" inkscape:connector-curvature="0" d="m-7.5621 1088.3c-2.464 0-4.4477 4.2041-4.4477 9.4252v21.425h8.8953v-21.425c0-5.2211-1.9836-9.4252-4.4477-9.4252z"/>
+    </g>
+    <circle id="path5890" cy="1040.1" style="color-rendering:auto;color:#000000;isolation:auto;mix-blend-mode:normal;shape-rendering:auto;solid-color:#000000;image-rendering:auto" cx="23.094" r="15.048"/>
    </g>
-   <circle id="path5890" cx="23.094" style="color-rendering:auto;color:#000000;isolation:auto;mix-blend-mode:normal;shape-rendering:auto;solid-color:#000000;image-rendering:auto" r="15.048" cy="1040.1"/>
   </g>
  </g>
 </svg>
