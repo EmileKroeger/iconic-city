@@ -266,11 +266,21 @@ angular.module('iconicApp')
       }),
       */
     ];
-    var HOUSES = ['parts/houseb1', 'parts/houseb2',
-                  'parts/houseb3', 'parts/houseb4',
-                  'parts/towerb1', 'parts/towerb3',
-                  'parts/towerb4',
+    var HOUSES = [
+      'parts/houseb1',
+      'parts/houseb2',
+      'parts/houseb3',
+      'parts/houseb4',
     ];
+    var TOWERS = [
+      'parts/towerb1',
+      'parts/towerb3',
+      'parts/towerb4',
+    ];
+    var LANDMARKS = [
+      'parts/churchb1',
+      'parts/castleb1',
+    ]
     var houseBag = new SShuffleBag(HOUSES, 2);
     
     var gridPlacer = new SGridPlacer(5, 5);
