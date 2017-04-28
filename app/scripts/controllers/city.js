@@ -329,28 +329,33 @@ angular.module('iconicApp')
     //var red = new SColorScheme({
     //  'path': 'red',
     //});
-    var blueWhite = new SColorScheme({
-      '.wall': ['lightgrey', 'white'],
-      '.feature': ['darkblue', 'blue'],
-      '.roof': ['darkblue', 'blue'],
-    });
-    var redWhite = new SColorScheme({
-      '.wall': ['lightgrey', 'white'],
-      '.feature': ['darkred', 'red'],
-      '.roof': ['darkred', 'red'],
-    });
-    var stoneColor = new SColorScheme({
-      '.wall': ['grey', 'lightgrey'],
-      '.feature': ['darkred', 'red'],
-      '.roof': ['darkred', 'red'],
-    });
-    var seriousColors = [blueWhite, redWhite];
+    var STONE_COLOR = new SShuffleBag([
+      new SColorScheme({
+        '.wall': ['grey', 'lightgrey'],
+        '.feature': ['darkred', 'red'],
+        '.roof': ['#3B3632', '#56564E'],
+      }),
+    ], 1);
+    var GERMAN_COLORS = new SShuffleBag([
+      new SColorScheme({
+        '.wall': ['#BCB0B2', 'white'],
+        '.feature': ['darkblue', 'blue'],
+        '.roof': ['#3B3632', '#56564E'],
+      }), 
+      new SColorScheme({
+        '.wall': ['#BCB0B2', 'white'],
+        '.feature': ['darkred', 'red'],
+        '.roof': ['#B77157', '#F0C1AF'],
+      })
+    ], 3);
+    /*
     var debugColors = [new SColorScheme({
       '.wall': ['darkred', 'red'],
       '.feature': ['darkgreen', 'green'],
       '.roof': ['darkblue', 'blue'],
     })];
-    var ITALIAN_COLORS = [
+    */
+    var ITALIAN_COLORS = new SShuffleBag([
       new SColorScheme({
         // Green
         '.wall': ['#CDC002', '#E8E37B'],
@@ -375,60 +380,62 @@ angular.module('iconicApp')
         '.feature': ['darkred', 'red'],
         '.roof': ['#EC7614', '#DD6914'],
       }),
-    ];
-    var WHITE_MEDITERRANEAN = [
+    ], 2);
+    var WHITERED_COLOR = new SShuffleBag([
       new SColorScheme({
         '.wall': ['#BCB0B2', 'white'],
         '.feature': ['darkred', 'red'],
         '.roof': ['#EC7614', '#DD6914'],
       }),
-    ];
-    var BRICK_WALLS = [
+    ], 1);
+    var BRICK_COLOR = new SShuffleBag([
       new SColorScheme({
         '.wall': ['#887263', '#CD9F74'],
         '.feature': ['darkred', 'red'],
         '.roof': ['#EC7614', '#DD6914'],
       }),
-    ];
-    var GERMAN_COLORS = new SShuffleBag(seriousColors, 3);
-    var STONE_COLORS = new SShuffleBag([stoneColor], 1);
-    var GERMAN_HOUSES = [
+    ], 1);
+    var GERMAN_HOUSES = new SShuffleBag([
       'parts/houseb1',
       'parts/houseb2',
       'parts/houseb3',
       'parts/houseb4',
-    ];
-    var TOWERS = [
+    ], 3);
+    var TOWERS = new SShuffleBag([
       'parts/towerb1',
       'parts/towerb3',
       'parts/towerb4',
-    ];
-    var LANDMARKS = [
+    ], 2);
+    var LANDMARKS = new SShuffleBag([
       'parts/churchb1',
       'parts/castleb1',
-    ];
-    var ITALIAN_HOUSES = [
+    ], 1);
+    var ITALIAN_HOUSES = new SShuffleBag([
       'parts/houselow1',
       'parts/houselow2',
-    ];
+    ], 3);
     var germanModel = {
-      houses: new SShuffleBag(GERMAN_HOUSES, 3),
+      houses: GERMAN_HOUSES,
       houseColors: GERMAN_COLORS,
-      landmarkColors: STONE_COLORS,
-      towers: new SShuffleBag(TOWERS, 2),
-      landmarks: new SShuffleBag(LANDMARKS, 1),
+      landmarkColors: STONE_COLOR,
+      towers: TOWERS,
+      landmarks: LANDMARKS,
     };
     var italianModel = {
-      houses: new SShuffleBag(ITALIAN_HOUSES, 3),
-      houseColors: new SShuffleBag(ITALIAN_COLORS, 3),
-      landmarkColors: new SShuffleBag(BRICK_WALLS, 1),
+      houses: ITALIAN_HOUSES,
+      houseColors: ITALIAN_COLORS,
+      landmarkColors: BRICK_COLOR,
     };
     var spanishModel = {
-      houses: new SShuffleBag(ITALIAN_HOUSES, 3),
-      houseColors: new SShuffleBag(WHITE_MEDITERRANEAN, 3),
-      landmarkColors: new SShuffleBag(BRICK_WALLS, 1),
+      houses: ITALIAN_HOUSES,
+      houseColors: WHITERED_COLOR,
+      landmarkColors: BRICK_COLOR,
     };
     var model = germanModel;
+    var models = [germanModel, spanishModel, italianModel];
+    if (true) {
+      model = models[0];
+    }
     /*
     if (true) {
       houseBag = new SShuffleBag(ITALIAN_HOUSES, 3);
