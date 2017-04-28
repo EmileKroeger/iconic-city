@@ -95,6 +95,7 @@ angular.module('iconicApp')
     };
   })
   .service('SGridPlacer', function(SDynamicSvg, sRandomUtils) {
+    var FORBIDDEN = "FORBIDDEN";
     function GridPlacer(wid, hei, scale) {
       if (!scale) {
         scale = 1;
@@ -104,9 +105,31 @@ angular.module('iconicApp')
       this.deltaX = 100 * scale;
       this.buildingWid = 200 * scale;
       this.deltaY = 30 * scale;
+      this.towerOffset = 5 * scale;
       this.buildings = [];
       this.grid = {};
       this.scale = scale;
+      // Snip the bottom
+      for (var i = 0; i < this.wid; i++) {
+        for (var j = 0; j < (this.hei - 1 - i); j++) {
+          var key = i + "-" + j;
+          this.grid[key] = FORBIDDEN;
+        }
+      }
+      if (this.wid > 5) {
+        // Snip the top
+        var max = this.wid - 1 + this.hei - 1;
+        for (var i = 0; i < this.wid; i++) {
+          for (var j = 0; j < this.hei; j++) {
+            if (i + j > (max - 3)) {
+              var key = i + "-" + j;
+              this.grid[key] = FORBIDDEN;
+            }
+          }
+        }
+      }
+      this.wallsegments = [];
+      this.walltowers = [];
     }
     GridPlacer.prototype.fillLineI = function(i0, j0, iRange, callback) {
       //console.debug("linei i=" + i0 + "+" + iRange + " j=" + j0);
@@ -142,6 +165,12 @@ angular.module('iconicApp')
         }
       }
     };
+    GridPlacer.prototype.calcx = function(i, j) {
+      return this.deltaX * (0.9 * i + this.hei - j);
+    }
+    GridPlacer.prototype.calcy = function(i, j) {
+      return this.deltaY * (i + 1.1 * j);
+    }
     GridPlacer.prototype.place = function(i, j, flip, buildingImage, color, scale) {
       if (!scale) {
         scale = 1;
@@ -149,8 +178,8 @@ angular.module('iconicApp')
       var dX = Math.random() * 10;
       var dY = Math.random() * 10;
       var building = new SDynamicSvg(buildingImage, color, {
-        x: this.deltaX * (0.9 * i + this.hei - j) + dX,
-        y: this.deltaY * (i + 1.1 * j) + dY,
+        x: this.calcx(i, j) + dX,
+        y: this.calcy(i, j) + dY,
         wid: (this.buildingWid * scale),
         flip: flip,
       });
@@ -189,15 +218,44 @@ angular.module('iconicApp')
         }
       });
     };
+    GridPlacer.prototype.addWall = function(wallImage, towerImage, gateImage, colorBag) {
+      var gateI = sRandomUtils.randint(1, this.wid - 1);
+      for (var i = 0; i <= this.wid; i++) {
+        var j = this.hei - 1 - i;
+        if (i < this.wid) {
+          var wall = new SDynamicSvg(wallImage, colorBag.draw(), {
+            x: this.calcx(i, j),
+            y: this.calcy(i, j),
+            wid: this.buildingWid,
+            flip: false,
+          });
+          this.wallsegments.push(wall);
+        }
+        var image = towerImage;
+        if (i == gateI) {
+          image = gateImage;
+        }
+        var tower = new SDynamicSvg(image, colorBag.draw(), {
+          x: this.calcx(i - 0.5, j + 0.5),
+          y: this.calcy(i - 0.5, j + 0.5) - this.towerOffset,
+          wid: this.buildingWid,
+          flip: false,
+        });
+        this.walltowers.push(tower);
+      }
+    }
     GridPlacer.prototype.iterBuildings = function(callback) {
       for(var i = this.wid - 1; i >= 0; i--) {
         for(var j = this.hei - 1; j >= 0; j--) {
           var key = i + '-' + j;
-          if (this.grid[key]) {
-            callback(this.grid[key]);
+          var cell = this.grid[key];
+          if (cell && (cell != FORBIDDEN)) {
+            callback(cell);
           }
         }
       }
+      this.wallsegments.forEach(callback);
+      this.walltowers.forEach(callback);
     };
     return GridPlacer;
   })
@@ -312,10 +370,13 @@ angular.module('iconicApp')
     var towerBag = new SShuffleBag(TOWERS, 2);
     var landmarkBag = new SShuffleBag(LANDMARKS, 1);
     
+    //var gridPlacer = new SGridPlacer(4, 4, 1.0);
     var gridPlacer = new SGridPlacer(10, 10, 0.5);
     gridPlacer.placeLandmark(landmarkBag, stoneColorBag);
-    gridPlacer.scatter(towerBag, stoneColorBag, 3);
+    gridPlacer.scatter(towerBag, stoneColorBag, 4);
     gridPlacer.fill(houseBag, colorBag);
+    gridPlacer.addWall("parts/wallsectionb1", "parts/walltowerb2",
+        "parts/wallgateb1", stoneColorBag);
     gridPlacer.iterBuildings(function(building) {
       $scope.dynamicSvgs.push(building);
     });

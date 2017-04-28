@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg id="svg2" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" sodipodi:docname="wallgateb1.svg" viewBox="0 0 200 200" height="200" width="100%" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" inkscape:version="0.91 r13725" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd">
+ <sodipodi:namedview id="base" bordercolor="#666666" inkscape:pageshadow="2" inkscape:window-y="36" pagecolor="#ffffff" inkscape:window-maximized="0" inkscape:zoom="3.3367564" inkscape:window-x="170" inkscape:window-height="841" showgrid="false" borderopacity="1.0" inkscape:current-layer="layer1" inkscape:cx="92.795465" inkscape:cy="48.291116" units="px" inkscape:window-width="1038" inkscape:pageopacity="0.0" inkscape:document-units="px"/>
+ <metadata id="metadata7">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g id="layer1" inkscape:label="Layer 1" inkscape:groupmode="layer" transform="translate(0,-852.36)">
+  <path id="rect4778-97-8-0" style="color:#000000" d="m51.418 1052.3h97.707l-0.0006-83.209v-8.8282h-10.19v8.8282h-7.2266v-8.8282h-10.618v8.8282h-6.7988v-8.8282h-10.618v8.8282h-6.8105v-8.8282h-10.618v8.8282h-6.7988v-8.8282h-10.618v8.8282h-7.2266v-8.8282h-10.19v8.8282z" sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccccccccc" inkscape:connector-curvature="0" class="wall right" stroke="#1a1a1a" fill="none"/>
+  <path id="rect6005" style="color-rendering:auto;color:#000000;isolation:auto;mix-blend-mode:normal;shape-rendering:auto;solid-color:#000000;image-rendering:auto" d="m100.27 142.76c-13.698 0-24.725 11.02-24.725 24.72v32.46h49.445v-32.46c0-13.7-11.02-24.72-24.72-24.72z" transform="translate(0,852.36)"/>
+  <g id="g6076" transform="translate(.47290)">
+   <rect id="rect6038" style="color-rendering:auto;color:#000000;isolation:auto;mix-blend-mode:normal;shape-rendering:auto;solid-color:#000000;image-rendering:auto" ry="0" height="15.274" width="5.4551" y="976.09" x="63.205"/>
+   <rect id="rect6074" style="color-rendering:auto;color:#000000;isolation:auto;mix-blend-mode:normal;shape-rendering:auto;solid-color:#000000;image-rendering:auto" ry="0" height="15.274" width="5.4551" y="976.09" x="130.94"/>
+  </g>
+ </g>
+</svg>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg id="svg2" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" sodipodi:docname="houselow1.svg" viewBox="0 0 200 200" height="200" width="100%" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" inkscape:version="0.91 r13725" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd">
+ <sodipodi:namedview id="base" bordercolor="#666666" inkscape:pageshadow="2" inkscape:window-y="25" pagecolor="#ffffff" inkscape:window-maximized="0" inkscape:zoom="2.3594431" inkscape:window-x="73" inkscape:window-height="841" showgrid="false" borderopacity="1.0" inkscape:current-layer="layer1" inkscape:cx="59.240879" inkscape:cy="82.461886" units="px" inkscape:window-width="1038" inkscape:pageopacity="0.0" inkscape:document-units="px"/>
+ <metadata id="metadata7">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g id="layer1" inkscape:label="Layer 1" inkscape:groupmode="layer" transform="translate(0,-852.36)">
+  <g id="g5012" stroke="#1a1a1a">
+   <path id="rect3336" style="color:#000000" d="m5.0601 965.11h74.576v87.379h-74.577z" sodipodi:nodetypes="ccccc" inkscape:connector-curvature="0" class="wall left" fill="#f9f9f9"/>
+   <path id="rect3336-5" style="color:#000000" d="m79.712 965.11h114.58v87.379h-114.58z" sodipodi:nodetypes="ccccc" inkscape:connector-curvature="0" fill="#f9f9f9"/>
+   <path id="rect3336-0" stroke-linejoin="bevel" style="color:#000000" d="m79.554 965.26 0.05418-22.941 41.234 0.28217 73.288 22.659z" sodipodi:nodetypes="ccccc" inkscape:connector-curvature="0" class="roof" fill="#f00"/>
+   <path id="path4172" stroke-linejoin="bevel" style="color-rendering:auto;color:#000000;isolation:auto;mix-blend-mode:normal;shape-rendering:auto;solid-color:#000000;image-rendering:auto" d="m5.0601 965.11 74.684-22.66-0.108 22.66z" sodipodi:nodetypes="cccc" inkscape:connector-curvature="0" class="roof left" fill="#f00"/>
+  </g>
+  <g id="g4238" transform="translate(.56690 1.1572)">
+   <g id="g4202">
+    <path id="rect4171" d="m96.465 119.15c-2.8401 0-5.127 2.2869-5.127 5.127v12.551h10.191v-13.307c-0.36355-2.4789-2.4815-4.3711-5.0645-4.3711z" style="color:#000000" transform="translate(0,852.36)" inkscape:connector-curvature="0"/>
+    <path id="path4200" d="m108.46 971.51c-2.8401 0-5.127 2.2869-5.127 5.127v12.551h10.191v-13.307c-0.36355-2.4789-2.4815-4.3711-5.0645-4.3711z" style="color:#000000" inkscape:connector-curvature="0"/>
+   </g>
+   <g id="g4206" transform="translate(34)">
+    <path id="path4208" inkscape:connector-curvature="0" style="color:#000000" transform="translate(0,852.36)" d="m96.465 119.15c-2.8401 0-5.127 2.2869-5.127 5.127v12.551h10.191v-13.307c-0.36355-2.4789-2.4815-4.3711-5.0645-4.3711z"/>
+    <path id="path4210" d="m108.46 971.51c-2.8401 0-5.127 2.2869-5.127 5.127v12.551h10.191v-13.307c-0.36355-2.4789-2.4815-4.3711-5.0645-4.3711z" style="color:#000000" inkscape:connector-curvature="0"/>
+   </g>
+   <g id="g4212" transform="translate(68)">
+    <path id="path4214" d="m96.465 119.15c-2.8401 0-5.127 2.2869-5.127 5.127v12.551h10.191v-13.307c-0.36355-2.4789-2.4815-4.3711-5.0645-4.3711z" style="color:#000000" transform="translate(0,852.36)" inkscape:connector-curvature="0"/>
+    <path id="path4216" d="m108.46 971.51c-2.8401 0-5.127 2.2869-5.127 5.127v12.551h10.191v-13.307c-0.36355-2.4789-2.4815-4.3711-5.0645-4.3711z" style="color:#000000" inkscape:connector-curvature="0"/>
+   </g>
+  </g>
+  <g id="g4230" transform="translate(.36432 1.1572)">
+   <g id="g4218" transform="translate(-76.651)">
+    <path id="path4220" inkscape:connector-curvature="0" style="color:#000000" transform="translate(0,852.36)" d="m96.465 119.15c-2.8401 0-5.127 2.2869-5.127 5.127v12.551h10.191v-13.307c-0.36355-2.4789-2.4815-4.3711-5.0645-4.3711z"/>
+    <path id="path4222" d="m108.46 971.51c-2.8401 0-5.127 2.2869-5.127 5.127v12.551h10.191v-13.307c-0.36355-2.4789-2.4815-4.3711-5.0645-4.3711z" style="color:#000000" inkscape:connector-curvature="0"/>
+   </g>
+   <g id="g4224" transform="translate(-44.249)">
+    <path id="path4226" d="m96.465 119.15c-2.8401 0-5.127 2.2869-5.127 5.127v12.551h10.191v-13.307c-0.36355-2.4789-2.4815-4.3711-5.0645-4.3711z" style="color:#000000" transform="translate(0,852.36)" inkscape:connector-curvature="0"/>
+    <path id="path4228" d="m108.46 971.51c-2.8401 0-5.127 2.2869-5.127 5.127v12.551h10.191v-13.307c-0.36355-2.4789-2.4815-4.3711-5.0645-4.3711z" style="color:#000000" inkscape:connector-curvature="0"/>
+   </g>
+  </g>
+  <g id="g4249" transform="translate(.56690 35.102)">
+   <g id="g4251">
+    <path id="path4253" inkscape:connector-curvature="0" style="color:#000000" transform="translate(0,852.36)" d="m96.465 119.15c-2.8401 0-5.127 2.2869-5.127 5.127v12.551h10.191v-13.307c-0.36355-2.4789-2.4815-4.3711-5.0645-4.3711z"/>
+    <path id="path4255" d="m108.46 971.51c-2.8401 0-5.127 2.2869-5.127 5.127v12.551h10.191v-13.307c-0.36355-2.4789-2.4815-4.3711-5.0645-4.3711z" style="color:#000000" inkscape:connector-curvature="0"/>
+   </g>
+   <g id="g4257" transform="translate(34)">
+    <path id="path4259" d="m96.465 119.15c-2.8401 0-5.127 2.2869-5.127 5.127v12.551h10.191v-13.307c-0.36355-2.4789-2.4815-4.3711-5.0645-4.3711z" style="color:#000000" transform="translate(0,852.36)" inkscape:connector-curvature="0"/>
+    <path id="path4261" d="m108.46 971.51c-2.8401 0-5.127 2.2869-5.127 5.127v12.551h10.191v-13.307c-0.36355-2.4789-2.4815-4.3711-5.0645-4.3711z" style="color:#000000" inkscape:connector-curvature="0"/>
+   </g>
+   <g id="g4263" transform="translate(68)">
+    <path id="path4265" inkscape:connector-curvature="0" style="color:#000000" transform="translate(0,852.36)" d="m96.465 119.15c-2.8401 0-5.127 2.2869-5.127 5.127v12.551h10.191v-13.307c-0.36355-2.4789-2.4815-4.3711-5.0645-4.3711z"/>
+    <path id="path4267" d="m108.46 971.51c-2.8401 0-5.127 2.2869-5.127 5.127v12.551h10.191v-13.307c-0.36355-2.4789-2.4815-4.3711-5.0645-4.3711z" style="color:#000000" inkscape:connector-curvature="0"/>
+   </g>
+  </g>
+  <g id="g4269" transform="translate(.36432 35.102)">
+   <g id="g4271" transform="translate(-76.651)">
+    <path id="path4273" d="m96.465 119.15c-2.8401 0-5.127 2.2869-5.127 5.127v12.551h10.191v-13.307c-0.36355-2.4789-2.4815-4.3711-5.0645-4.3711z" style="color:#000000" transform="translate(0,852.36)" inkscape:connector-curvature="0"/>
+    <path id="path4275" d="m108.46 971.51c-2.8401 0-5.127 2.2869-5.127 5.127v12.551h10.191v-13.307c-0.36355-2.4789-2.4815-4.3711-5.0645-4.3711z" style="color:#000000" inkscape:connector-curvature="0"/>
+   </g>
+   <g id="g4277" transform="translate(-44.249)">
+    <path id="path4279" inkscape:connector-curvature="0" style="color:#000000" transform="translate(0,852.36)" d="m96.465 119.15c-2.8401 0-5.127 2.2869-5.127 5.127v12.551h10.191v-13.307c-0.36355-2.4789-2.4815-4.3711-5.0645-4.3711z"/>
+    <path id="path4281" d="m108.46 971.51c-2.8401 0-5.127 2.2869-5.127 5.127v12.551h10.191v-13.307c-0.36355-2.4789-2.4815-4.3711-5.0645-4.3711z" style="color:#000000" inkscape:connector-curvature="0"/>
+   </g>
+  </g>
+  <rect id="rect4283" style="color-rendering:auto;color:#000000;isolation:auto;mix-blend-mode:normal;shape-rendering:auto;solid-color:#000000;image-rendering:auto" width="9.2577" stroke="#1a1a1a" y="947.44" x="40.01" height="9.2577" class="wall left" fill="#f9f9f9"/>
+ </g>
+</svg>
