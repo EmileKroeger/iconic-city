@@ -12,9 +12,9 @@
   </rdf:RDF>
  </metadata>
  <g id="layer1" inkscape:label="Layer 1" inkscape:groupmode="layer" transform="translate(0,-852.36)">
-  <g id="g5012" stroke="#1a1a1a">
+  <g stroke="#1a1a1a">
    <path id="rect3336" style="color:#000000" d="m5.0601 965.11h74.576v87.379h-74.577z" sodipodi:nodetypes="ccccc" inkscape:connector-curvature="0" class="wall left" fill="#f9f9f9"/>
-   <path id="rect3336-5" style="color:#000000" d="m79.712 965.11h114.58v87.379h-114.58z" sodipodi:nodetypes="ccccc" inkscape:connector-curvature="0" fill="#f9f9f9"/>
+   <path id="rect3336-5" style="color:#000000" d="m79.712 965.11h114.58v87.379h-114.58z" sodipodi:nodetypes="ccccc" inkscape:connector-curvature="0" class="wall" fill="#f9f9f9"/>
    <path id="rect3336-0" stroke-linejoin="bevel" style="color:#000000" d="m79.554 965.26 0.05418-22.941 41.234 0.28217 73.288 22.659z" sodipodi:nodetypes="ccccc" inkscape:connector-curvature="0" class="roof" fill="#f00"/>
    <path id="path4172" stroke-linejoin="bevel" style="color-rendering:auto;color:#000000;isolation:auto;mix-blend-mode:normal;shape-rendering:auto;solid-color:#000000;image-rendering:auto" d="m5.0601 965.11 74.684-22.66-0.108 22.66z" sodipodi:nodetypes="cccc" inkscape:connector-curvature="0" class="roof left" fill="#f00"/>
   </g>

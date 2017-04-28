@@ -350,6 +350,46 @@ angular.module('iconicApp')
       '.feature': ['darkgreen', 'green'],
       '.roof': ['darkblue', 'blue'],
     })];
+    var ITALIAN_COLORS = [
+      new SColorScheme({
+        // Green
+        '.wall': ['#CDC002', '#E8E37B'],
+        '.feature': ['darkred', 'red'],
+        '.roof': ['#EC7614', '#DD6914'],
+      }),
+      new SColorScheme({
+        // Salmon
+        '.wall': ['#E7A85B', '#F4C484'],
+        '.feature': ['darkred', 'red'],
+        '.roof': ['#EC7614', '#DD6914'],
+      }),
+      new SColorScheme({
+        // Yellow
+        '.wall': ['#BD9301', '#FDDA38'],
+        '.feature': ['darkred', 'red'],
+        '.roof': ['#EC7614', '#DD6914'],
+      }),
+      new SColorScheme({
+        // Orange
+        '.wall': ['#D1B258', '#ECC38F'],
+        '.feature': ['darkred', 'red'],
+        '.roof': ['#EC7614', '#DD6914'],
+      }),
+    ];
+    var WHITE_MEDITERRANEAN = [
+      new SColorScheme({
+        '.wall': ['#BCB0B2', 'white'],
+        '.feature': ['darkred', 'red'],
+        '.roof': ['#EC7614', '#DD6914'],
+      }),
+    ];
+    var BRICK_WALLS = [
+      new SColorScheme({
+        '.wall': ['#887263', '#CD9F74'],
+        '.feature': ['darkred', 'red'],
+        '.roof': ['#EC7614', '#DD6914'],
+      }),
+    ];
     var colorBag = new SShuffleBag(seriousColors, 3);
     var stoneColorBag = new SShuffleBag([stoneColor], 1);
     $scope.dynamicSvgs = [];
@@ -368,7 +408,19 @@ angular.module('iconicApp')
       'parts/churchb1',
       'parts/castleb1',
     ];
-    var houseBag = new SShuffleBag(HOUSES, 2);
+    var ITALIAN_HOUSES = [
+      'parts/houselow1',
+      'parts/houselow2',
+    ];
+    var houseBag;
+    if (true) {
+      houseBag = new SShuffleBag(ITALIAN_HOUSES, 3);
+      colorBag = new SShuffleBag(ITALIAN_COLORS, 3);
+      colorBag = new SShuffleBag(WHITE_MEDITERRANEAN, 3);
+      stoneColorBag = new SShuffleBag(BRICK_WALLS, 3);
+    } else {
+      houseBag = new SShuffleBag(HOUSES, 2);
+    }
     var towerBag = new SShuffleBag(TOWERS, 2);
     var landmarkBag = new SShuffleBag(LANDMARKS, 1);
     
