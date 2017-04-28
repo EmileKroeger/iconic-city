@@ -481,23 +481,8 @@ angular.module('iconicApp')
       towers: SIMPLE_TOWER,
       landmarks: SIMPLE_LANDMARKS,
     };
-    var model = germanModel;
     var models = [germanModel, dutchModel, spanishModel, italianModel, frenchModel];
-    if (true) {
-      model = models[4];
-    }
-    /*
-    if (true) {
-      houseBag = new SShuffleBag(ITALIAN_HOUSES, 3);
-      colorBag = new SShuffleBag(ITALIAN_COLORS, 3);
-      colorBag = new SShuffleBag(WHITE_MEDITERRANEAN, 1);
-      stoneColorBag = new SShuffleBag(BRICK_WALLS, 1);
-    } else {
-      houseBag = new SShuffleBag(HOUSES, 2);
-    }
-    var towerBag = new SShuffleBag(TOWERS, 2);
-    var landmarkBag = new SShuffleBag(LANDMARKS, 1);
-    */
+    var model = models[Math.floor(Math.random() * models.length)];
     
     //var gridPlacer = new SGridPlacer(4, 4, 1.0);
     var gridPlacer = new SGridPlacer(10, 10, 0.5);
