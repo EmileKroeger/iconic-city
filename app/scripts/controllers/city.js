@@ -390,10 +390,9 @@ angular.module('iconicApp')
         '.roof': ['#EC7614', '#DD6914'],
       }),
     ];
-    var colorBag = new SShuffleBag(seriousColors, 3);
-    var stoneColorBag = new SShuffleBag([stoneColor], 1);
-    $scope.dynamicSvgs = [];
-    var HOUSES = [
+    var GERMAN_COLORS = new SShuffleBag(seriousColors, 3);
+    var STONE_COLORS = new SShuffleBag([stoneColor], 1);
+    var GERMAN_HOUSES = [
       'parts/houseb1',
       'parts/houseb2',
       'parts/houseb3',
@@ -412,25 +411,45 @@ angular.module('iconicApp')
       'parts/houselow1',
       'parts/houselow2',
     ];
-    var houseBag;
+    var germanModel = {
+      houses: new SShuffleBag(GERMAN_HOUSES, 3),
+      houseColors: GERMAN_COLORS,
+      landmarkColors: STONE_COLORS,
+      towers: new SShuffleBag(TOWERS, 2),
+      landmarks: new SShuffleBag(LANDMARKS, 1),
+    };
+    var italianModel = {
+      houses: new SShuffleBag(ITALIAN_HOUSES, 3),
+      houseColors: new SShuffleBag(ITALIAN_COLORS, 3),
+      landmarkColors: new SShuffleBag(BRICK_WALLS, 1),
+    };
+    var spanishModel = {
+      houses: new SShuffleBag(ITALIAN_HOUSES, 3),
+      houseColors: new SShuffleBag(WHITE_MEDITERRANEAN, 3),
+      landmarkColors: new SShuffleBag(BRICK_WALLS, 1),
+    };
+    var model = germanModel;
+    /*
     if (true) {
       houseBag = new SShuffleBag(ITALIAN_HOUSES, 3);
       colorBag = new SShuffleBag(ITALIAN_COLORS, 3);
-      colorBag = new SShuffleBag(WHITE_MEDITERRANEAN, 3);
-      stoneColorBag = new SShuffleBag(BRICK_WALLS, 3);
+      colorBag = new SShuffleBag(WHITE_MEDITERRANEAN, 1);
+      stoneColorBag = new SShuffleBag(BRICK_WALLS, 1);
     } else {
       houseBag = new SShuffleBag(HOUSES, 2);
     }
     var towerBag = new SShuffleBag(TOWERS, 2);
     var landmarkBag = new SShuffleBag(LANDMARKS, 1);
+    */
     
     //var gridPlacer = new SGridPlacer(4, 4, 1.0);
     var gridPlacer = new SGridPlacer(10, 10, 0.5);
-    gridPlacer.placeLandmark(landmarkBag, stoneColorBag);
-    gridPlacer.scatter(towerBag, stoneColorBag, 4);
-    gridPlacer.fill(houseBag, colorBag);
+    gridPlacer.placeLandmark(model.landmarks, model.landmarkColors);
+    gridPlacer.scatter(model.towers, model.landmarkColors, 4);
+    gridPlacer.fill(model.houses, model.houseColors);
     gridPlacer.addWall('parts/wallsectionb1', 'parts/walltowerb2',
-        'parts/wallgateb1', stoneColorBag);
+        'parts/wallgateb1', model.landmarkColors);
+    $scope.dynamicSvgs = [];
     gridPlacer.iterBuildings(function(building) {
       $scope.dynamicSvgs.push(building);
     });
