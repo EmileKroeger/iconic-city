@@ -401,18 +401,50 @@ angular.module('iconicApp')
       'parts/houseb3',
       'parts/houseb4',
     ], 3);
+    var DUTCH_HOUSES = new SShuffleBag([
+      'parts/houseb1',
+      'parts/houseb2',
+      'parts/houseb3',
+      'parts/houseb3',
+      'parts/houseb3',
+      'parts/houseb4',
+    ], 3);
     var TOWERS = new SShuffleBag([
       'parts/towerb1',
       'parts/towerb3',
       'parts/towerb4',
     ], 2);
+    var FANCY_TOWERS = new SShuffleBag([
+      'parts/towerb3',
+      'parts/towerb4',
+    ], 2);
+    var SIMPLE_TOWER = new SShuffleBag([
+      'parts/towerb1',
+    ], 1);
     var LANDMARKS = new SShuffleBag([
+      'parts/townhallb1',
       'parts/churchb1',
       'parts/castleb1',
+    ], 1);
+    var FANCY_LANDMARKS = new SShuffleBag([
+      'parts/townhallb1',
+      'parts/townhallb1',
+      'parts/churchb1',
+    ], 1);
+    var SIMPLE_LANDMARKS = new SShuffleBag([
+      'parts/castleb1',
+      'parts/churchb1',
     ], 1);
     var ITALIAN_HOUSES = new SShuffleBag([
       'parts/houselow1',
       'parts/houselow2',
+    ], 3);
+    var FRENCH_HOUSES = new SShuffleBag([
+      'parts/houselow1',
+      'parts/houselow2',
+      'parts/houseb1',
+      'parts/houseb2',
+      'parts/houseb4',
     ], 3);
     var germanModel = {
       houses: GERMAN_HOUSES,
@@ -421,20 +453,38 @@ angular.module('iconicApp')
       towers: TOWERS,
       landmarks: LANDMARKS,
     };
+    var dutchModel = {
+      houses: DUTCH_HOUSES,
+      houseColors: BRICK_COLOR,
+      landmarkColors: STONE_COLOR,
+      towers: FANCY_TOWERS,
+      landmarks: FANCY_LANDMARKS,
+    };
     var italianModel = {
       houses: ITALIAN_HOUSES,
       houseColors: ITALIAN_COLORS,
       landmarkColors: BRICK_COLOR,
+      towers: SIMPLE_TOWER,
+      landmarks: SIMPLE_LANDMARKS,
     };
     var spanishModel = {
       houses: ITALIAN_HOUSES,
       houseColors: WHITERED_COLOR,
       landmarkColors: BRICK_COLOR,
+      towers: SIMPLE_TOWER,
+      landmarks: SIMPLE_LANDMARKS,
+    };
+    var frenchModel = {
+      houses: FRENCH_HOUSES,
+      houseColors: WHITERED_COLOR,
+      landmarkColors: STONE_COLOR,
+      towers: SIMPLE_TOWER,
+      landmarks: SIMPLE_LANDMARKS,
     };
     var model = germanModel;
-    var models = [germanModel, spanishModel, italianModel];
+    var models = [germanModel, dutchModel, spanishModel, italianModel, frenchModel];
     if (true) {
-      model = models[0];
+      model = models[4];
     }
     /*
     if (true) {
