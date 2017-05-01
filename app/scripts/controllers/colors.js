@@ -8,8 +8,7 @@
  * Controller of the iconicApp
  */
 angular.module('iconicApp')
-  .controller('ColorsCtrl', function ($scope, sIconData) {
-    
+  .service('SBlasonMaker', function () {
     var colorValues = {
       black: 'black',
       white: 'white',
@@ -52,7 +51,13 @@ angular.module('iconicApp')
       }
       return schemes;
     }
-    
+    var classes = ['simple', 'bordered', 'crested', 'triple', 'quartered'];
+    return {
+      classes: classes,
+      getAdaptedSchemes: getAdaptedSchemes
+    }
+  })
+  .controller('ColorsCtrl', function ($scope, sIconData, SBlasonMaker) {
     $scope.coats = [];
     var byKind = {};
     angular.forEach(sIconData.attributedKinds, function(kind, icon) {
@@ -62,13 +67,12 @@ angular.module('iconicApp')
       }
       byKind[kind].push(icon);
     });
-    var classes = ['simple', 'bordered', 'crested', 'triple', 'quartered'];
     var classIndex = 0;
     var shown = {};
     sIconData.schemes.forEach(function(scheme) {
       var icons = byKind[scheme.name];
       if (icons) {
-        var schemes = getAdaptedSchemes(scheme);
+        var schemes = SBlasonMaker.getAdaptedSchemes(scheme);
         schemes.forEach(function(subScheme, i) {
           var color = subScheme.fg + ' on ' + subScheme.bg;
           if (!shown[color]) {
@@ -76,11 +80,11 @@ angular.module('iconicApp')
             var coat = {
               icon: icons[i % icons.length],
               scheme: subScheme,
-              class: classes[classIndex],
+              class: SBlasonMaker.classes[classIndex],
               color: color,
             };
             $scope.coats.push(coat);
-            classIndex = (classIndex + 1) % classes.length;
+            classIndex = (classIndex + 1) % SBlasonMaker.classes.length;
           }
         });
       }

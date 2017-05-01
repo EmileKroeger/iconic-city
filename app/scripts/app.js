@@ -47,6 +47,10 @@ angular
         templateUrl: 'views/city.html',
         controller: 'CityCtrl'
       })
+      .when('/fullcity', {
+        templateUrl: 'views/fullcity.html',
+        controller: 'FullcityCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
