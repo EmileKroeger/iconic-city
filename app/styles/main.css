@@ -201,4 +201,17 @@ body {
 
 .svgpart {
   position: absolute;
+  padding: 30px;
+}
+
+.cityname {
+  position: absolute;
+  left: 190px;
+  top: 20px;
+  font-size: 60px;
+}
+
+.citycoat {
+  position: absolute;
+  padding: 30px;
 }

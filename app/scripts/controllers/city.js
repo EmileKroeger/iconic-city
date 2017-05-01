@@ -324,7 +324,7 @@ angular.module('iconicApp')
     };
     return DynamicSvg;
   })
-  .controller('CityCtrl', function ($scope, SDynamicSvg, SColorScheme,
+  .service('SCityBuilder', function (SColorScheme,
     SShuffleBag, sRandomUtils, SGridPlacer) {
     //var red = new SColorScheme({
     //  'path': 'red',
@@ -482,17 +482,26 @@ angular.module('iconicApp')
       landmarks: SIMPLE_LANDMARKS,
     };
     var models = [germanModel, dutchModel, spanishModel, italianModel, frenchModel];
-    var model = models[Math.floor(Math.random() * models.length)];
     
     //var gridPlacer = new SGridPlacer(4, 4, 1.0);
-    var gridPlacer = new SGridPlacer(10, 10, 0.5);
-    gridPlacer.placeLandmark(model.landmarks, model.landmarkColors);
-    gridPlacer.scatter(model.towers, model.landmarkColors, 4);
-    gridPlacer.fill(model.houses, model.houseColors);
-    gridPlacer.addWall('parts/wallsectionb1', 'parts/walltowerb2',
-        'parts/wallgateb1', model.landmarkColors);
-    $scope.dynamicSvgs = [];
-    gridPlacer.iterBuildings(function(building) {
-      $scope.dynamicSvgs.push(building);
-    });
+    function iterBuildings(callback) {
+      var model = models[Math.floor(Math.random() * models.length)];
+
+      var gridPlacer = new SGridPlacer(10, 10, 0.5);
+      gridPlacer.placeLandmark(model.landmarks, model.landmarkColors);
+      gridPlacer.scatter(model.towers, model.landmarkColors, 4);
+      gridPlacer.fill(model.houses, model.houseColors);
+      gridPlacer.addWall('parts/wallsectionb1', 'parts/walltowerb2',
+          'parts/wallgateb1', model.landmarkColors);
+      gridPlacer.iterBuildings(callback);
+    }
+    return {
+      iterBuildings: iterBuildings,
+    }
+  })
+  .controller('CityCtrl', function ($scope, SCityBuilder) {
+      $scope.dynamicSvgs = [];
+      SCityBuilder.iterBuildings(function(building) {
+        $scope.dynamicSvgs.push(building);
+      });
   });

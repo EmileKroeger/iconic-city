@@ -1,2 +1,14 @@
-<blason content="coat"></blason>
-<h1>{{name}}</h1>
+<div class="citybox">
+  <blason class="citycoat" content="coat"></blason>
+  <h1 class="cityname">{{name}}</h1>
+  <object
+    class="svgpart"
+    ng-repeat="dynamicSvg in dynamicSvgs"
+    id="{{dynamicSvg.id}}"
+    ng-attr-data="{{dynamicSvg.url}}" type="image/svg+xml"
+    ng-style="dynamicSvg.style"
+    on-loaded="dynamicSvg.loaded();"
+    >
+  </object>
+  
+</div>

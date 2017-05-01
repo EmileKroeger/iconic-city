@@ -50,7 +50,11 @@ angular.module('iconicApp')
     }
     return make;
   })
-  .controller('FullcityCtrl', function ($scope, sRandomCoat, sCityNames) {
+  .controller('FullcityCtrl', function ($scope, sRandomCoat, sCityNames, SCityBuilder) {
     $scope.name = sCityNames.getGerman();
     $scope.coat = sRandomCoat();
+    $scope.dynamicSvgs = [];
+    SCityBuilder.iterBuildings(function(building) {
+      $scope.dynamicSvgs.push(building);
+    });
   });
