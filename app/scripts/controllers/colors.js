@@ -59,14 +59,7 @@ angular.module('iconicApp')
   })
   .controller('ColorsCtrl', function ($scope, sIconData, SBlasonMaker) {
     $scope.coats = [];
-    var byKind = {};
-    angular.forEach(sIconData.attributedKinds, function(kind, icon) {
-      //console.log(a + " " + b);
-      if (byKind[kind] === undefined) {
-        byKind[kind] = [];
-      }
-      byKind[kind].push(icon);
-    });
+    var byKind = sIconData.getByKind();
     var classIndex = 0;
     var shown = {};
     sIconData.schemes.forEach(function(scheme) {

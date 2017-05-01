@@ -15,11 +15,13 @@ angular.module('iconicApp')
 
 
     var colorSchemes = [
+      /*
       {
         name: 'undecided',
         fg: 'white',
         bg: 'grey',
       },
+      */
       {
         name: 'objects',
         fg: 'black',
@@ -325,11 +327,23 @@ angular.module('iconicApp')
       });
       return found;
     }
+    function getByKind() {
+      var byKind = {};
+      angular.forEach(attributedKinds, function(kind, icon) {
+        //console.log(a + " " + b);
+        if (byKind[kind] === undefined) {
+          byKind[kind] = [];
+        }
+        byKind[kind].push(icon);
+      });
+      return byKind;
+    }
     return {
       icons: icons,
       attributedKinds: attributedKinds,
       schemes: colorSchemes,
       findSchemeIndex: findSchemeIndex,
+      getByKind: getByKind,
     };
   })
   .controller('IconsCtrl', function ($scope, sIconData) {
