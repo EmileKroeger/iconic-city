@@ -55,7 +55,7 @@ angular.module('iconicApp')
     return {
       classes: classes,
       getAdaptedSchemes: getAdaptedSchemes
-    }
+    };
   })
   .controller('ColorsCtrl', function ($scope, sIconData, SBlasonMaker) {
     $scope.coats = [];
