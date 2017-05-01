@@ -15,7 +15,7 @@ angular.module('iconicApp')
       link: function postLink(scope /*, element, attrs*/) {
         var scheme = scope.content.scheme;
         var cls = scope.content.class;
-        var iconUrl = 'url(../images/icons/' + scope.content.icon + '.svg)';
+        var iconUrl = 'url(images/icons/' + scope.content.icon + '.svg)';
         var elements = [];
         if (cls === 'simple') {
           elements = [{
